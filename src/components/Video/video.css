@@ -1,0 +1,22 @@
+.main-div{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+}
+.brand{
+color: #fff;
+background-color: #e87638;
+padding:6px 18px;
+text-transform: uppercase;
+font-family: "Open Sans";
+letter-spacing: 3px;
+font-size: 10px;
+}
+.name{
+    color:#fff;
+    margin-bottom: 0;
+}
