@@ -4,6 +4,11 @@ import Header from '../Header/header';
 import Loader from '../Loader/loader';
 import Video from '../Video/video';
 import Projects from '../Projects/projects';
+import Footer from '../Footer/footer';
+import About from '../About/about';
+import Services from '../Services/services';
+import Testimonials from '../Testimonials/testimonials';
+import Contact from '../Contact/contact';
 
 function Home() {
 
@@ -23,6 +28,11 @@ function Home() {
                     <Header />
                     <Video />
                     <Projects />
+                    <About />
+                    <Services />
+                    <Testimonials/>
+                    <Contact />
+                   
                 </>
             )}
         </div>

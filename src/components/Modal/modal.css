@@ -1,0 +1,25 @@
+.dialog-main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .dialog-extra-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .dialog-extra-image {
+    width: 48%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .dialog-extra-image {
+      width: 100%;
+    }
+  }
+  

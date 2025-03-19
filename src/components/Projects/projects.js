@@ -7,7 +7,38 @@ function Projects(){
         `/assets/projects/${index + 1}.jpg`
       );
 
-      console.log("img :",images)
+    const projectDetails=[
+      {id:1,
+        img:'/assets/projects/1.jpg',
+        title:'branding',
+        subtitle:'project name'
+      },
+      {id:2,
+        img:'/assets/projects/2.jpg',
+        title:'branding',
+        subtitle:'project name'
+      },
+      {id:3,
+        img:'/assets/projects/3.jpg',
+        title:'branding',
+        subtitle:'project name'
+      },
+      {id:4,
+        img:'/assets/projects/4.jpg',
+        title:'branding',
+        subtitle:'project name'
+      },
+      {id:5,
+        img:'/assets/projects/5.jpg',
+        title:'branding',
+        subtitle:'project name'
+      },
+      {id:6,
+        img:'/assets/projects/6.jpg',
+        title:'branding',
+        subtitle:'project name'
+      }
+    ]
 
   const [loaded, setLoaded] = useState(Array(images.length).fill(false));
 
@@ -29,11 +60,11 @@ function Projects(){
     <div className="image-grid">
       {images.map((src, index) => (
         <div key={index} className="image-container">
-          {!loaded[index] ? (
+          {/* {!loaded[index] ? (
             <div className="skeleton" />
-          ) : (
+          ) : ( */}
             <img src={src} alt={`Image ${index + 1}`} className="image" />
-          )}
+          {/* )} */}
         </div>
       ))}
     </div>
