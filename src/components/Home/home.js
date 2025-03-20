@@ -9,6 +9,7 @@ import About from '../About/about';
 import Services from '../Services/services';
 import Testimonials from '../Testimonials/testimonials';
 import Contact from '../Contact/contact';
+import Clients from '../Clients/clients'
 
 function Home() {
 
@@ -28,6 +29,7 @@ function Home() {
                     <Header />
                     <Video />
                     <Projects />
+                    <Clients />
                     <About />
                     <Services />
                     <Testimonials/>

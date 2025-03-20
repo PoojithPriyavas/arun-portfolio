@@ -1,0 +1,22 @@
+.client {
+    overflow: hidden;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-slider {
+    max-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-slider img {
+    width: 100%;
+    height: auto;
+}
