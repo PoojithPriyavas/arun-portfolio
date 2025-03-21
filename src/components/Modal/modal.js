@@ -58,7 +58,7 @@
 //   },
 // }));
 
-// export default function Modal() {
+// export default function Modal({isOpen,onClose,title,message}) {
 //   const [open, setOpen] = React.useState(false);
 
 //   const handleClickOpen = () => {

@@ -1,7 +1,25 @@
 import React, { useState } from "react";
 import './services.css';
-// import Modal from '../Modal/modal'
+import Modal from '../Modal/modal'
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Typography from '@mui/material/Typography';
 
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+    '& .MuiDialogContent-root': {
+        padding: theme.spacing(2),
+    },
+    '& .MuiDialogActions-root': {
+        padding: theme.spacing(1),
+    },
+}));
 
 export default function Services() {
 
@@ -188,6 +206,7 @@ export default function Services() {
 
     const handleOpenModal = (service) => {
         setSelectedService(service);
+        console.log("service", service)
         setIsOpen(true);
     };
 
@@ -216,16 +235,102 @@ export default function Services() {
             </div>
 
             <div class="service-bg"><h1>Services</h1></div>
-            {/* <Modal
-                isOpen={isOpen}
-                onClose={() => setIsOpen(false)}
-                title={selectedService?.heading}
-                message={selectedService?.desc}
-                onConfirm={() => {
-                    alert("Confirmed!");
-                    setIsOpen(false);
-                }}
-            /> */}
-        </div>
+            {isOpen && selectedService && (
+                // <React.Fragment>
+
+                //     <BootstrapDialog
+                //         onClose={() => setIsOpen(false)}
+                //         aria-labelledby="customized-dialog-title"
+                //         open={isOpen}
+                //     >
+
+                //         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+
+                //         </DialogTitle>
+
+                //         <IconButton
+                //             aria-label="close"
+                //             onClick={() => setIsOpen(false)}
+                //             sx={(theme) => ({
+                //                 position: 'absolute',
+                //                 right: 8,
+                //                 top: 8,
+                //                 color: theme.palette.grey[500],
+                //             })}
+                //         >
+                //             <CloseIcon />
+                //         </IconButton>
+                //         <DialogContent dividers>
+                //             <div style={{
+                //                 height: '250px',
+                //                 width: '100%',
+                //                 overflow: 'hidden',
+                //                 display: 'flex',
+                //                 justifyContent: 'center',
+                //                 alignItems: 'center'
+                //             }}>
+                //                 <img src={selectedService.banner} style={{ height: '100%', width: '100%', padding: '6% 3% 3% 3%' }} />
+                //             </div>
+                //             <Typography gutterBottom>
+                //                 Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                //                 dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                //                 consectetur ac, vestibulum at eros.
+                //             </Typography>
+                //             <Typography gutterBottom>
+                //                 Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                //                 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                //             </Typography>
+                //             <Typography gutterBottom>
+                //                 Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+                //                 magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
+                //                 ullamcorper nulla non metus auctor fringilla.
+                //             </Typography>
+                //         </DialogContent>
+                //         <DialogActions>
+                //             <Button autoFocus onClick={() => setIsOpen(false)}>
+                //                 Save changes
+                //             </Button>
+                //         </DialogActions>
+                //     </BootstrapDialog>
+
+                // </React.Fragment>
+                <div className="modal-overlay">
+                    <div className="modal-container">
+                        <div className="close-button-container">
+                            <button className="close-button" onClick={() => setIsOpen(false)}>&times;</button>
+                        </div>
+                        <img
+                            src={selectedService.banner}
+                            alt="Modal Image"
+                            className="modal-image"
+                        />
+                        <h2 className="modal-heading" >{selectedService.heading}</h2>
+                        <p> {selectedService.desc}</p> <br />
+                        <p>{selectedService.desc2}</p>
+                        <div className="row">
+                            <div className="col-6 col-md-12 col-12 "><img src={selectedService.banner} /></div>
+                            <div className="col-6 col-md-12 col-12 "><img src={selectedService.banner} /></div>
+                        </div>
+                        <h2 className="modal-heading" >Our Capabilities</h2>
+                        <ul className="modal-list">
+                            {selectedService.capabilities.map((item, i) =>
+                                <li><span><i class="fa fa-check" aria-hidden="true"></i></span>{item} </li>
+                            )}
+                        </ul>
+                        <h2 className="modal-heading" >Our Approach</h2>
+                        <ul className="modal-list">
+                           <p>{selectedService.approach}</p>
+                        </ul>
+                        <h2 className="modal-heading" >Our Process</h2>
+                        <ul className="modal-list">
+                            {selectedService.capabilities.map((item, i) =>
+                                <li><span><i class="fa fa-check" aria-hidden="true"></i></span>{item} </li>
+                            )}
+                        </ul>
+                    </div>
+                </div>
+            )
+            }
+        </div >
     )
 }

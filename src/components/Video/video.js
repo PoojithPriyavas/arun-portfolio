@@ -6,7 +6,7 @@ function Video() {
         <div className="main-div">
             <video autoPlay loop muted playsInline className="bg-video" style={{ objectFit: 'cover' }}>
                 <source src="/assets/video/bg.mp4" type="video/mp4" style={{ height: '100%', width: '100%' }} />
-                Your browser does not support the video tag.
+                
             </video>
             <div className="content">
                 <h1 className="name">Hi ,i'm Arun</h1>
