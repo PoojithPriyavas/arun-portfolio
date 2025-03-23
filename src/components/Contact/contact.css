@@ -1,3 +1,8 @@
+.contact{
+    background: #000;
+    position: relative;
+    z-index: -1;
+}
 .tp-contact-form-area {
     position: relative;
     border-top: 1px solid rgb(32, 32, 32);

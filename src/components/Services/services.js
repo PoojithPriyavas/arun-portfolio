@@ -328,6 +328,20 @@ export default function Services() {
                             )}
                         </ul>
                     </div>
+
+                    {/* <div className="row">
+                        {selectedService.related.map((item,index)=>
+                        <div className="col-lg-4 col-md-12 col-12">
+                        <div className="service-items" key={index}>
+                                <i class="fi flaticon-vector"></i>
+                                <h2>{item.heading}</h2>
+                                <p>{item.desc}</p>
+                               
+                            </div>
+                        </div>
+                        )}
+                        
+                    </div> */}
                 </div>
             )
             }

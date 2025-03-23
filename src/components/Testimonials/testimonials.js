@@ -47,13 +47,13 @@ export default function Testimonials() {
 
   const settings = {
     dots: false,
-    infinite: true, 
-    slidesToShow: 2, 
-    slidesToScroll: 1, 
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     rtl: false,
-    centerMode: false, 
+    centerMode: false,
     focusOnSelect: false,
     adaptiveHeight: true,
     responsive: [
@@ -82,7 +82,7 @@ export default function Testimonials() {
         }
       }
     ]
-   
+
   }
   const testimonialDetails = [
     {
@@ -108,27 +108,30 @@ export default function Testimonials() {
   ]
 
   return (
-    <div className='container'>
-      <div className="tstml-main">
-        <div className="tstml-text">
-          <p className="tstml-title">Testionials</p>
-          <h1 style={{ color: '#fff' }}>What My Client Say.</h1>
-        </div>
-        <>
-          <Slider {...settings}>
-            {testimonialDetails.map((item, i) => (
-                <div className='custom-slide'  key={i}>
+    <div className="tstml">
+      <div className='container'>
+        <div className="tstml-main ">
+          <div className="tstml-text">
+            <p className="tstml-title">Testionials</p>
+            <h1 style={{ color: '#fff' }}>What My Client Say.</h1>
+          </div>
+          <>
+            <Slider {...settings}>
+              {testimonialDetails.map((item, i) => (
+                <div className='custom-slide' key={i}>
                   <p style={{ color: '#fff' }}>{item.quote}</p>
                   <h3 style={{ color: '#fff' }}>{item.name}</h3>
                 </div>
-             
-            ))}
-          </Slider>
-        </>
 
-        <div class="tstml-bg"><h1>Review</h1></div>
+              ))}
+            </Slider>
+          </>
+
+          <div class="tstml-bg"><h1>Review</h1></div>
+        </div>
       </div>
     </div>
+
 
   )
 }

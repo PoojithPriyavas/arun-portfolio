@@ -1,4 +1,9 @@
-
+.tstml{
+  background:#000;
+  position: relative;
+  z-index: -1;
+  border-top: 1px solid #202020;
+}
 
 @media (max-width: 1400px) {
   .tstml-main {
@@ -6,9 +11,10 @@
   }
 }
 .tstml-main{
-  border-top: 1px solid #202020;
+
   overflow: hidden;
-  position:relative
+  position:relative;
+  background-color:#000
 }
 .tstml-title {
   /* background: #090909; */

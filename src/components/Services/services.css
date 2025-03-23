@@ -48,7 +48,9 @@
 .service-main{
     border-top: 1px solid #202020;
     overflow: hidden;
-    position:relative
+    position:relative;
+    background-color: #000;
+    z-index: -1;
 }
 
 .service-title {
@@ -314,7 +316,10 @@
     gap: 0 !important;
 }
 
-
+.srv-section,.srv-text{
+  position:relative;
+  z-index: 1;
+}
 /*----modal---*/
 
 /* .modal-overlay {

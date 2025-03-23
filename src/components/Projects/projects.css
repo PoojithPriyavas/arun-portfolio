@@ -3,13 +3,9 @@
     /* grid-template-columns: repeat(3, 1fr); */
     /* gap: 16px; */
     padding: 16px;
+    background: #000;
   }
-  .image-grid {
-    display: grid;
-   
-    /* gap: 16px; */
-    padding: 16px;
-  }
+
   @media (min-width: 1024px) {
     .image-grid {
       grid-template-columns: repeat(3, 1fr);

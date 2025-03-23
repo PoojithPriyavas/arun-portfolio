@@ -1,19 +1,35 @@
 import React from "react";
-import './video.css'
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import './video.css';
 
 function Video() {
+    const { scrollYProgress } = useScroll();
+    const opacity = useTransform(scrollYProgress, [0, 0.024], [1, 0]);
+
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        console.log("Scroll Progress:", latest);
+    });
+
     return (
         <div className="main-div">
-            <video autoPlay loop muted playsInline className="bg-video" style={{ objectFit: 'cover' }}>
-                <source src="/assets/video/bg.mp4" type="video/mp4" style={{ height: '100%', width: '100%' }} />
-                
+            <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                preload="auto" 
+                className="bg-video"
+                title="Background Video"
+            >
+                <source src="/assets/video/bg.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
             </video>
-            <div className="content">
-                <h1 className="name">Hi ,i'm Arun</h1>
-                <h4 className="brand">branding•illustration•design</h4>
-            </div>
-
+            <motion.div className="content" style={{ opacity }}>
+                <h1 className="name">Hi, I'm Arun</h1>
+                <h4 className="brand">Branding • Illustration • Design</h4>
+            </motion.div>
         </div>
-    )
+    );
 }
-export default Video
+
+export default Video;
