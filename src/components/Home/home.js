@@ -34,6 +34,7 @@ function Home() {
                     <Services />
                     <Testimonials/>
                     <Contact />
+                    <Footer />
                    
                 </>
             )}

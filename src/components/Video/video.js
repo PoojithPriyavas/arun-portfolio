@@ -7,7 +7,7 @@ function Video() {
     const opacity = useTransform(scrollYProgress, [0, 0.024], [1, 0]);
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        console.log("Scroll Progress:", latest);
+        // console.log("Scroll Progress:", latest);
     });
 
     return (

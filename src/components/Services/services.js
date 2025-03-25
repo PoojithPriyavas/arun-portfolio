@@ -212,7 +212,7 @@ export default function Services() {
 
     return (
 
-        <div className="service-main">
+        <div className="service-main" id="services">
             <div className="service-text">
                 <p className="srv-title">Check Services</p>
                 <h1 style={{ color: '#fff' }}>My Best Services</h1>
@@ -226,7 +226,7 @@ export default function Services() {
                                 <i class="fi flaticon-vector"></i>
                                 <h2>{item.heading}</h2>
                                 <p>{item.desc}</p>
-                                <button className="read-more" onClick={() => handleOpenModal(item)}><i class="fi flaticon-right-arrow"></i></button>
+                                <button className="read-more" onClick={() => handleOpenModal(item)}><img src="/assets/icons/arrow-down-right.svg"/></button>
                             </div>
                         </div>
                     )}

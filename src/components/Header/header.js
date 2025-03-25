@@ -5,6 +5,16 @@ import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const handleScroll = (event, id) => {
+    event.preventDefault();
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = -60; // Adjust this based on your header height
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
 
   return (
     <header className="header">
@@ -12,9 +22,10 @@ const Header = () => {
         <div className="logo">Logo</div>
         <nav className="nav-links">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" onClick={(e) => handleScroll(e, "about")} >About</a>
+          <a href="#projects" onClick={(e) => handleScroll(e, "projects")}>Projects</a>
+          <a href="#services" onClick={(e) => handleScroll(e, "services")}>Services</a>
+          <a href="#contact" onClick={(e) => handleScroll(e, "contact")}>Contact</a>
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <i class="fa fa-facebook-f"></i>

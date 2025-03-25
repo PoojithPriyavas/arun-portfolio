@@ -78,7 +78,7 @@ import './contact.css';
 
 export default function Contact() {
     return (
-        <div className="contact">
+        <div className="contact" id="contact">
             <section className="tp-contact-form-area section-padding">
                 <div className="container">
                     <div className="tp-contact-form-wrap">

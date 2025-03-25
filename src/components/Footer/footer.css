@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
   position: relative;
   width: 100%;
   background-color: #212121;
@@ -35,4 +35,68 @@
 .copyright {
   color: #666;
   font-size: 14px;
+} */
+
+.footer {
+background: rgb(33, 33, 33);
+color:#fff;
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top:10%;
+    padding-bottom:10%;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    
+    width: 100%;
+  }
+
+  .column {
+    display: flex;
+    align-items: center;
+  }
+
+  .word {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .icons i {
+    margin-left: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #323232;
+    padding: 10px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .icons i:hover {
+    color: #fff;
+    background-color: #e87638;
+  }
+  .line{
+    border:1px solid hsla(225, 8%, 62%, .48);
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .content-two{
+    font-size:13px;
+  }
+  .up-arrow{
+    font-size:40px;
+  }
 }
