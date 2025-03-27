@@ -4,6 +4,10 @@
   /* gap: 16px; */
   padding: 16px;
   background: #000;
+  cursor:pointer;
+  z-index: 1;
+  position:relative;
+  /* margin-top:100vh; */
 }
 
 @media (min-width: 1024px) {
@@ -70,6 +74,17 @@
     align-items: center;
     z-index: 1000;
   }
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.411);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+    pointer-events: auto;
+  }
 
   .modal-content {
     background: white;
@@ -86,6 +101,7 @@
     cursor: pointer;
   }
   .modal-container {
+    pointer-events: auto;
     width: 80%;
     max-width: 900px;
     height: auto;
@@ -98,6 +114,7 @@
     overflow-y: auto;
     text-align: center;
     color: #fff;
+    top: 58px;
   }
   
   /* Responsive Video Wrapper */

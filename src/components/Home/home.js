@@ -23,7 +23,7 @@ function Home() {
         return () => clearTimeout(timer);
     }, []);
     return (
-        <div className='home-main'>
+        <div className="home-main">
             {loading ? <Loader /> : (
                 <>
                     <Header />

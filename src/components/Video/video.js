@@ -11,24 +11,26 @@ function Video() {
     });
 
     return (
-        <div className="main-div">
-            <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-                preload="auto" 
-                className="bg-video"
-                title="Background Video"
-            >
-                <source src="/assets/video/bg.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-            <motion.div className="content" style={{ opacity }}>
-                <h1 className="name">Hi, I'm Arun</h1>
-                <h4 className="brand">Branding • Illustration • Design</h4>
-            </motion.div>
-        </div>
+        <section className="parallax">
+            <div className="main-div">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="bg-video"
+                    title="Background Video"
+                >
+                    <source src="/assets/video/bg.mp4" type="video/mp4" />
+                </video>
+                <motion.div className="content" style={{ opacity }}>
+                    <h1 className="name">Hi, I'm Arun</h1>
+                    <h4 className="brand">Branding • Illustration • Design</h4>
+                </motion.div>
+            </div>
+        </section>
+
     );
 }
 

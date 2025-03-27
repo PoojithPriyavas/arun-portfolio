@@ -21,11 +21,11 @@ const Header = () => {
       <div className="container">
         <div className="logo">Logo</div>
         <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about" onClick={(e) => handleScroll(e, "about")} >About</a>
-          <a href="#projects" onClick={(e) => handleScroll(e, "projects")}>Projects</a>
-          <a href="#services" onClick={(e) => handleScroll(e, "services")}>Services</a>
-          <a href="#contact" onClick={(e) => handleScroll(e, "contact")}>Contact</a>
+          <a href="">Home</a>
+          <a href="" onClick={(e) => handleScroll(e, "about")} >About</a>
+          <a href="" onClick={(e) => handleScroll(e, "projects")}>Projects</a>
+          <a href="" onClick={(e) => handleScroll(e, "services")}>Services</a>
+          <a href="" onClick={(e) => handleScroll(e, "contact")}>Contact</a>
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <i class="fa fa-facebook-f"></i>

@@ -236,64 +236,7 @@ export default function Services() {
 
             <div class="service-bg"><h1>Services</h1></div>
             {isOpen && selectedService && (
-                // <React.Fragment>
-
-                //     <BootstrapDialog
-                //         onClose={() => setIsOpen(false)}
-                //         aria-labelledby="customized-dialog-title"
-                //         open={isOpen}
-                //     >
-
-                //         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-
-                //         </DialogTitle>
-
-                //         <IconButton
-                //             aria-label="close"
-                //             onClick={() => setIsOpen(false)}
-                //             sx={(theme) => ({
-                //                 position: 'absolute',
-                //                 right: 8,
-                //                 top: 8,
-                //                 color: theme.palette.grey[500],
-                //             })}
-                //         >
-                //             <CloseIcon />
-                //         </IconButton>
-                //         <DialogContent dividers>
-                //             <div style={{
-                //                 height: '250px',
-                //                 width: '100%',
-                //                 overflow: 'hidden',
-                //                 display: 'flex',
-                //                 justifyContent: 'center',
-                //                 alignItems: 'center'
-                //             }}>
-                //                 <img src={selectedService.banner} style={{ height: '100%', width: '100%', padding: '6% 3% 3% 3%' }} />
-                //             </div>
-                //             <Typography gutterBottom>
-                //                 Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                //                 dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                //                 consectetur ac, vestibulum at eros.
-                //             </Typography>
-                //             <Typography gutterBottom>
-                //                 Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-                //                 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-                //             </Typography>
-                //             <Typography gutterBottom>
-                //                 Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-                //                 magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-                //                 ullamcorper nulla non metus auctor fringilla.
-                //             </Typography>
-                //         </DialogContent>
-                //         <DialogActions>
-                //             <Button autoFocus onClick={() => setIsOpen(false)}>
-                //                 Save changes
-                //             </Button>
-                //         </DialogActions>
-                //     </BootstrapDialog>
-
-                // </React.Fragment>
+                
                 <div className="modal-overlay">
                     <div className="modal-container">
                         <div className="close-button-container">
@@ -329,19 +272,7 @@ export default function Services() {
                         </ul>
                     </div>
 
-                    {/* <div className="row">
-                        {selectedService.related.map((item,index)=>
-                        <div className="col-lg-4 col-md-12 col-12">
-                        <div className="service-items" key={index}>
-                                <i class="fi flaticon-vector"></i>
-                                <h2>{item.heading}</h2>
-                                <p>{item.desc}</p>
-                               
-                            </div>
-                        </div>
-                        )}
-                        
-                    </div> */}
+                    
                 </div>
             )
             }

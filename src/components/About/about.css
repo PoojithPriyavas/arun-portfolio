@@ -1,10 +1,10 @@
-.about-div{
+/* .about-div{
     background: #000;
     position: relative;
     z-index:-1; 
     padding: 100px 0px;
     border-top: 1px solid #202020;
-}
+} */
 
 .about-div .container {
     
@@ -90,7 +90,7 @@
 .about-text {
     text-align: justify;
     position: relative;
-    z-index: 999;
+    z-index: 1;
 
     .abt-me {
         /* background: #090909; */
