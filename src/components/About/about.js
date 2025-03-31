@@ -6,15 +6,18 @@ export default function About() {
         <div className="about-div" id="about">
             <div className="container">
                 <div className="row">
-                    <div className="col col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 about-img">
-                        <img src='/assets/about/profile.jpg' className="abt-img" alt="about-img" style={{ maxWidth: "100%" }} />
-                        <div className="about-img-text">
-                            <div className="about-img-icon">
-                                <h3><span style={{ fontSize: "100px" }}>8+</span><br />Years Experience</h3>
+                    <div className="col col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
+                        <div className="about-img">
+                            <img src='/assets/about/profile.jpg' className="abt-img" alt="about-img" style={{ maxWidth: "100%" }} />
+                            <div className="about-img-text">
+                                <div className="about-img-icon">
+                                    <h3><span style={{ fontSize: "100px" }}>8+</span><br />Years Experience</h3>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-                    <div className="col col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 about-text"
+                    <div className="col col-sm-12 col-md-6 col-lg-6 col-xl-6 about-text"
                     // style={{color:'#fff',textAlign:'start'}}
                     >
                         <p className="abt-me">About Me</p>

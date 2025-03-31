@@ -21,16 +21,15 @@
     margin-bottom: 100px; */
     /* z-index: 9999; */
     background: #000;
+    padding: 40px;
 }
 
-.row {
+.about-div .row{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
     gap: 16px;
 }
-
 .col {
     flex: 1;
     min-width: 300px;
@@ -81,8 +80,8 @@
         text-align: center;
         position: relative;
         z-index: 1;
-        flex: 1 1 50%;
-        max-width: 50%;
+        /* flex: 1 1 50%; */
+        /* max-width: 50%; */
         word-wrap: break-word;
 
         .abt-me {
@@ -414,13 +413,17 @@
 
     .about-img {
         margin-right: auto;
-        max-width: 545px;
+        /* max-width: 545px; */
         position: relative;
         text-align: right;
         z-index: 1;
     }
 }
-
+.about-text h2, .about-text h5, .about-text p {
+    margin: 0; /* Reset Bootstrap default margins */
+    padding: 0; /* Reset padding */
+    width: 100%; /* Ensure full width */
+}
 @media(max-width:768px) {
     .about-img-text {
         align-items: center;

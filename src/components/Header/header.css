@@ -69,12 +69,14 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  a{
+
+  a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
   }
 
 }
+
 .nav-links {
   display: flex;
   gap: 50px;
@@ -121,7 +123,7 @@
   color: #e87638;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 870px) {
   .nav-links {
     display: none;
   }
@@ -137,6 +139,60 @@
   .mobile-menu {
     display: flex;
     align-items: start;
+  }
+
+  .lets-connect {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid;
+    border-radius: 30px;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 999;
+    padding-left:10px;
+  }
+
+  .mobile-menu a {
+    padding: 12px 0;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: none;
   }
 }
 
