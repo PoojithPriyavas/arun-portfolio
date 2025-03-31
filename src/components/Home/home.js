@@ -23,7 +23,7 @@ function Home() {
         return () => clearTimeout(timer);
     }, []);
     return (
-        <div className="home-main">
+        <>
             {loading ? <Loader /> : (
                 <>
                     <Header />
@@ -33,12 +33,12 @@ function Home() {
                     <About />
                     <Services />
                     <Testimonials/>
-                    <Contact />
+                    {/* <Contact /> */}
                     <Footer />
                    
                 </>
             )}
-        </div>
+        </>
     )
 }
 export default Home

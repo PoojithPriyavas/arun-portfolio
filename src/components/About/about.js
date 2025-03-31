@@ -18,7 +18,7 @@ export default function About() {
                     // style={{color:'#fff',textAlign:'start'}}
                     >
                         <p className="abt-me">About Me</p>
-                        <h2>Welcome to Arun, Best Software Services</h2>
+                        <h2>Welcome to Arun,Best Software Services</h2>
                         <h5>I have 8+ years of experiences in Software Development for give you better services.</h5>
                         <p className="abt-content">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite</p>
                         <div className="abt-count">
@@ -38,9 +38,9 @@ export default function About() {
                     </div>
 
                 </div>
-                <div className="abt-bg-text">
+                {/* <div className="abt-bg-text">
                     <h1>about me</h1>
-                </div>
+                </div> */}
             </div>
         </div>
 

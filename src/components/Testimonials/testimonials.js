@@ -50,7 +50,7 @@ export default function Testimonials() {
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     rtl: false,
     centerMode: false,
@@ -127,7 +127,7 @@ export default function Testimonials() {
             </Slider>
           </>
 
-          <div class="tstml-bg"><h1>Review</h1></div>
+          {/* <div class="tstml-bg"><h1>Review</h1></div> */}
         </div>
       </div>
     </div>

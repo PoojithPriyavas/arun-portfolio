@@ -17,16 +17,20 @@ const Header = () => {
 
 
   return (
-    <header className="header">
-      <div className="container">
-        <div className="logo">Logo</div>
+    <div className="container">
+      <header className="header">
+
+        <div className="logo">
+          <img className="user-icon" src='/assets/about/user.jpg'/>
+          <p>Arun</p>
+        </div>
         <nav className="nav-links">
           <a href="">Home</a>
-          <a href="" onClick={(e) => handleScroll(e, "about")} >About</a>
-          <a href="" onClick={(e) => handleScroll(e, "projects")}>Projects</a>
+          <a href="" onClick={(e) => handleScroll(e, "about")} >About Me</a>
+          <a href="" onClick={(e) => handleScroll(e, "projects")}>Designs</a>
           <a href="" onClick={(e) => handleScroll(e, "services")}>Services</a>
           <a href="" onClick={(e) => handleScroll(e, "contact")}>Contact</a>
-          <div className="social-icons">
+          {/* <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <i class="fa fa-facebook-f"></i>
             </a>
@@ -36,33 +40,37 @@ const Header = () => {
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <i class="fa fa-twitter"></i>
             </a>
-          </div>
-        </nav>
+          </div> */}
 
+        </nav>
+        <div className="lets-connect">
+          <a target="_blank" href="https://wa.me/+916238470880">Let's Connect</a>
+        </div>
         <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <Menu size={28} color="white" /> : <Menu size={28} color="white" />}
         </button>
-      </div>
-      {isOpen && (
-        <div className="mobile-menu">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <div className="mobile-social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-facebook-f"></i>
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-github"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-twitter"></i>
-            </a>
+
+        {isOpen && (
+          <div className="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <div className="mobile-social-icons">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-facebook-f"></i>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-github"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+    </div>
   );
 };
 

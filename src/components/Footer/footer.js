@@ -16,11 +16,11 @@ export default function Footer() {
 
   const scrollToTop = () => {
     let position = window.scrollY;
-    const speed = 3; 
-    
+    const speed = 3;
+
     const scrollStep = () => {
       if (position > 0) {
-        position -= 60; 
+        position -= 60;
         window.scrollTo(0, position);
         requestAnimationFrame(scrollStep);
       }
@@ -45,7 +45,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="row"
           initial="hidden"
           whileInView="visible"
@@ -61,38 +61,38 @@ export default function Footer() {
             <i className="fa fa-twitter"></i>
           </motion.div>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="line"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeInVariantTwo}
         ></motion.div>
-        <motion.div 
+        <motion.div
           className="row"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <motion.div className="column col-lg-4 col-md-4 col-sx-12 content-two" variants={fadeInVariantThree}>
-            2025 © (name). All rights reserved.
+          <motion.div className="column col-lg-4 col-md-4 col-sx-12 content-one" variants={fadeInVariantThree}>
+          ©2025 Arun. All rights reserved.
           </motion.div>
-          <motion.div 
-            className="column col-lg-4 col-md-4 col-sx-12 up-arrow" 
+          <motion.div
+            className="column col-lg-4 col-md-4 col-sx-12 up-arrow"
             variants={fadeInVariantThree}
           >
             {isVisible && (
-              <motion.i 
-                className="fa fa-angle-up" 
-                onClick={scrollToTop} 
-                whileHover={{ scale: 1.2 }} 
+              <motion.i
+                className="fa fa-angle-up"
+                onClick={scrollToTop}
+                whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 style={{ cursor: "pointer" }}
               ></motion.i>
             )}
           </motion.div>
           <motion.div className="column col-lg-4 col-md-4 col-sx-12 content-two" variants={fadeInVariantThree}>
-            with love from (name) team
+            Designed By Cod Hatch
           </motion.div>
         </motion.div>
       </div>

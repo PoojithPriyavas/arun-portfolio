@@ -13,42 +13,42 @@ function Projects() {
       img: '/assets/projects/1.jpg',
       title: 'branding',
       subtitle: 'project name',
-      link: 'https://youtu.be/CgkZ7MvWUAA?si=10mJlQkYtoG0CRdP'
+      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
     },
     {
       id: 2,
       img: '/assets/projects/2.jpg',
       title: 'branding',
       subtitle: 'project name',
-      link: 'https://youtu.be/CgkZ7MvWUAA?si=10mJlQkYtoG0CRdP'
+      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
     },
     {
       id: 3,
       img: '/assets/projects/3.jpg',
       title: 'branding',
       subtitle: 'project name',
-      link: 'https://youtu.be/CgkZ7MvWUAA?si=10mJlQkYtoG0CRdP'
+      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
     },
     {
       id: 4,
       img: '/assets/projects/4.jpg',
       title: 'branding',
       subtitle: 'project name',
-      link: 'https://youtu.be/CgkZ7MvWUAA?si=10mJlQkYtoG0CRdP'
+      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
     },
     {
       id: 5,
       img: '/assets/projects/5.jpg',
       title: 'branding',
       subtitle: 'project name',
-      link: 'https://www.youtube.com/watch?v=CgkZ7MvWUAA'
+      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
     },
     {
       id: 6,
       img: '/assets/projects/6.jpg',
       title: 'branding',
       subtitle: 'project name',
-      link: 'https://youtu.be/CgkZ7MvWUAA?si=10mJlQkYtoG0CRdP'
+      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
     }
   ]
 
@@ -82,6 +82,12 @@ function Projects() {
       {projectDetails.map((prt, i) =>
         <div key={prt.id} className="image-container" onClick={() => handleOpenModal(prt)}>
           <img src={prt.img} className="image" alt={prt.title} />
+          <div className="project-text">
+            {prt.title}
+          </div>
+          <div className="project-text2">
+            {prt.subtitle}
+          </div>
         </div>
       )}
       {isOpen && selectedProject && (
@@ -92,7 +98,7 @@ function Projects() {
             </div>
             <div className="video-wrapper">
               <iframe
-                src={selectedProject.link}
+                src={selectedProject.link.replace("youtube.com/shorts/", "youtube.com/embed/")}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

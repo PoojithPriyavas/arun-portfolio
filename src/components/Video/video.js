@@ -4,7 +4,7 @@ import './video.css';
 
 function Video() {
     const { scrollYProgress } = useScroll();
-    const opacity = useTransform(scrollYProgress, [0, 0.024], [1, 0]);
+    const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         // console.log("Scroll Progress:", latest);
