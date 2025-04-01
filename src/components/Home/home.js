@@ -10,6 +10,7 @@ import Services from '../Services/services';
 import Testimonials from '../Testimonials/testimonials';
 import Contact from '../Contact/contact';
 import Clients from '../Clients/clients'
+import Tech from '../Technology/tech'
 
 function Home() {
 
@@ -33,6 +34,7 @@ function Home() {
                     <About />
                     <Services />
                     <Testimonials/>
+                    <Tech />
                     {/* <Contact /> */}
                     <Footer />
                    

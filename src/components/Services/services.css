@@ -127,6 +127,7 @@
     border: 1px solid #202020;
     padding: 70px 30px;
     transition: all .3s;
+    text-align:start;
 
     .fi {
         position: relative;
@@ -194,6 +195,7 @@
         pointer-events: auto;
         cursor: pointer;
         isolation: isolate;
+       
 
         .fi {
             color: #fff;
@@ -322,7 +324,7 @@
 }
 
 .srv-section {
-    padding: 40px;
+    padding: 60px;
 
     .row {
 
@@ -488,4 +490,28 @@
     li {
         color: #919195;
     }
+}
+
+.srv-section-row .col-lg-4,
+.srv-section-row .col-md-6,
+.srv-section-row .col-sm-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 0 !important; /* Ensure there's no space at the bottom of each column */
+}
+
+.service-items {
+    margin-bottom: 0 !important; /* Remove margin from service items */
+}
+
+/* Remove padding/margin from all columns if necessary */
+.srv-section-row .col-12,
+.srv-section-row .col-6 {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+.srv-section-row {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
 }
