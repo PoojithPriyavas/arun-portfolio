@@ -68,8 +68,8 @@
 .abt-img {
     width: 100%;
     max-width: 545px;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
+    /* -webkit-filter: grayscale(1); */
+    /* filter: grayscale(1); */
 }
 
 @media (min-width: 768px) and (max-width: 1399px) {
