@@ -312,7 +312,7 @@
 }
 
 .srv-title::after {
-    background: #090909;
+    background: #000;
     content: "";
     height: 20px;
     width: 20px;

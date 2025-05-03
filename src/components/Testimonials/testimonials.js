@@ -50,7 +50,7 @@ export default function Testimonials() {
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     rtl: false,
     centerMode: false,
