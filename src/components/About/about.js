@@ -53,8 +53,32 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./about.css";
+import CountUp from 'react-countup';
+import { motion } from "framer-motion";
 
 export default function About() {
+  const stats = [
+    {
+      value: 1,
+      suffix: "K+",
+      description: "Videos Created",
+    },
+    {
+      value: 15,
+      suffix: "+",
+      description: "Awards & Honors",
+    },
+    {
+      value: 25,
+      suffix: "M+",
+      description: "Viewers",
+    }
+  ];
+  const fadeInVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+  
   return (
     <div className="about-div" id="about">
       {/* <Container> */}
@@ -96,13 +120,20 @@ export default function About() {
 
           {/* Stats Section */}
           <Row className="text-center abt-count">
-            <Col sm={4} className="abt-count-item">
-              <h3>
-                <span>1000</span>+
-              </h3>
-              <p>Videos Created</p>
-            </Col>
-            <Col sm={4} className="abt-count-item">
+            {stats.map((item, index) => (
+              <Col sm={4} className="abt-count-item">
+                <h3>
+                  <span> <CountUp
+                    start={0}
+                    end={item.value}
+                    duration={2}
+                    suffix={item.suffix}
+                  /></span>
+                </h3>
+                <p>{item.description}</p>
+              </Col>
+            ))}
+            {/* <Col sm={4} className="abt-count-item">
               <h3>
                 <span>15</span>+
               </h3>
@@ -113,7 +144,7 @@ export default function About() {
                 <span>25M</span>+
               </h3>
               <p>Viewers</p>
-            </Col>
+            </Col> */}
           </Row>
         </Col>
       </Row>

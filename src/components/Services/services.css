@@ -121,15 +121,50 @@
     }
 }
 
+/* .service-items {
+    border-left: 0;
+    background: #101010;
+    border: 1px solid #202020;
+    padding: 70px 30px;
+    transition: all 0.3s;
+    text-align: start;
+  } */
+
+.service-items .fi {
+    position: relative;
+}
+
+.service-items .fi i::before {
+    color: #a9a9a9;
+    font-size: 45px;
+    transition: all 0.3s;
+}
+
+.service-items:hover i::before {
+    color: #e5540a;
+}
+
+.service-items .fi i::after {
+    background: hsla(33, 27%, 58%, 0.08);
+    border-radius: 50%;
+    content: "";
+    height: 55px;
+    left: 20px;
+    position: absolute;
+    top: -25px;
+    transition: all 0.3s;
+    width: 55px;
+}
+
 .service-items {
     border-left: 0;
     background: #101010;
     border: 1px solid #202020;
     padding: 70px 30px;
     transition: all .3s;
-    text-align:start;
-
-    .fi {
+    text-align: start;
+    cursor: pointer !important;
+    /* .fi {
         position: relative;
     }
 
@@ -149,7 +184,7 @@
         top: -40px;
         transition: all .3s;
         width: 55px;
-    }
+    } */
 
     h2 {
         cursor: pointer;
@@ -195,7 +230,7 @@
         pointer-events: auto;
         cursor: pointer;
         isolation: isolate;
-       
+
 
         .fi {
             color: #fff;
@@ -331,7 +366,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        padding-bottom : 10px;
+        padding-bottom: 10px;
         /* gap: 16px; */
 
     }
@@ -497,11 +532,13 @@
 .srv-section-row .col-sm-12 {
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin-bottom: 0 !important; /* Ensure there's no space at the bottom of each column */
+    margin-bottom: 0 !important;
+    /* Ensure there's no space at the bottom of each column */
 }
 
 .service-items {
-    margin-bottom: 0 !important; /* Remove margin from service items */
+    margin-bottom: 0 !important;
+    /* Remove margin from service items */
 }
 
 /* Remove padding/margin from all columns if necessary */
@@ -510,6 +547,7 @@
     padding: 0 !important;
     margin-bottom: 0 !important;
 }
+
 .srv-section-row {
     display: flex;
     flex-wrap: wrap;
@@ -518,9 +556,9 @@
 
 .truncate-2-lines {
     display: -webkit-box;
-    -webkit-line-clamp: 2;     /* Limit to 2 lines */
+    -webkit-line-clamp: 2;
+    /* Limit to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  
+}

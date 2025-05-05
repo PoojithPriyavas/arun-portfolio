@@ -28,7 +28,7 @@ export default function Services() {
         {
 
             id: 1,
-            icon: <i class="fa-solid fa-video"></i>,
+            icon: <i class="fa fa-video-camera" aria-hidden="true"></i>,
             heading: "Cinematography",
             desc: "Capturing compelling visuals with cinematic techniques to bring every story to life.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
@@ -160,7 +160,7 @@ export default function Services() {
         },
         {
             id: 4,
-            icon: <i class="fa-solid fa-wave-square"></i>,
+            icon: <i class="fa fa-volume-up" aria-hidden="true"></i>,
             heading: "Sound design ",
             desc: "Creating immersive audio landscapes that enhance emotion, realism, and storytelling depth.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
@@ -204,7 +204,7 @@ export default function Services() {
         },
         {
             id: 5,
-            icon: <i class="fa-solid fa-photo-film"></i>,
+            icon: <i class="fa fa-spinner" aria-hidden="true"></i>,
             heading: "Motiongraphics",
             desc: "Animating visuals with dynamic motion graphics to communicate ideas in a creative and engaging way.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
@@ -313,7 +313,7 @@ export default function Services() {
                     {serviceDetails.map((item, index) => (
                         <Col lg={4} md={6} sm={12} key={index} className="mb-4">
                             <div className="service-items">
-                                <i className="fi flaticon-vector"></i>
+                                <div className="fi">{item.icon}</div>
                                 <h2>{item.heading}</h2>
                                 <p className="truncate-2-lines">{item.desc}</p>
                                 <button
