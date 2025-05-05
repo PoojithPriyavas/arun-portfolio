@@ -14,7 +14,7 @@ function ReelEmbed({ link }) {
         className="instagram-media"
         data-instgrm-permalink={link}
         data-instgrm-version="14"
-        style={{ width: '100%', margin: 'auto' }}
+        style={{ height: '100%', margin: 'auto',width:'auto' }}
       ></blockquote>
       <script async src="//www.instagram.com/embed.js"></script>
     </div>

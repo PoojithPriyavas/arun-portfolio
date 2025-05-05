@@ -315,7 +315,7 @@ export default function Services() {
                             <div className="service-items">
                                 <i className="fi flaticon-vector"></i>
                                 <h2>{item.heading}</h2>
-                                <p>{item.desc}</p>
+                                <p className="truncate-2-lines">{item.desc}</p>
                                 <button
                                     className="read-more"
                                     onClick={() => handleOpenModal(item)}

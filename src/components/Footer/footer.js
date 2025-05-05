@@ -14,20 +14,10 @@ export default function Footer() {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  const scrollToTop = () => {
-    let position = window.scrollY;
-    const speed = 3;
+ const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
-    const scrollStep = () => {
-      if (position > 0) {
-        position -= 60;
-        window.scrollTo(0, position);
-        requestAnimationFrame(scrollStep);
-      }
-    };
-
-    requestAnimationFrame(scrollStep);
-  };
 
   const fadeInVariant = {
     hidden: { opacity: 0, y: 50 },
