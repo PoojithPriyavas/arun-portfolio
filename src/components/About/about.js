@@ -70,7 +70,7 @@ export default function About() {
               />
               <div className="about-img-text">
                 <h3>
-                  <span style={{ fontSize: "100px" }}>8+</span>
+                  <span style={{ fontSize: "100px" }}>6+</span>
                   <br /> Years Experience
                 </h3>
               </div>
@@ -82,14 +82,11 @@ export default function About() {
             <p className="abt-me">About Me</p>
             <h2>Welcome to Arun, Best Software Services</h2>
             <h5>
-              I have 8+ years of experience in Software Development to provide
-              you with better services.
+            I have over 6 years of experience in videography and editing, bringing ideas to life through cinematic storytelling.
             </h5>
             <p className="abt-content">
-              A wonderful serenity has taken possession of my entire soul, like
-              these sweet mornings of spring which I enjoy with my whole heart.
-              I am alone, and feel the charm of existence in this spot, which
-              was created for the bliss of souls like mine. I am so happy, my
+            From scripting to the final cut, I handle the entire creative process with precision and passion—creating visuals that resonate and inspire. which I enjoy with my whole heart.
+            I’ve had the privilege of working with creative teams and government-backed media, producing content that has reached millions. I am so happy, my
               dear friend, so absorbed in the exquisite.
             </p>
 
@@ -97,21 +94,21 @@ export default function About() {
             <Row className="text-center abt-count">
               <Col sm={4} className="abt-count-item">
                 <h3>
-                  <span>500</span>+
+                  <span>1000</span>+
                 </h3>
-                <p>Projects Completed</p>
+                <p>Videos Created</p>
               </Col>
               <Col sm={4} className="abt-count-item">
                 <h3>
-                  <span>52</span>+
+                  <span>15</span>+
                 </h3>
-                <p>Awards Won</p>
+                <p>Awards & Honors</p>
               </Col>
               <Col sm={4} className="abt-count-item">
                 <h3>
-                  <span>2M</span>+
+                  <span>25M</span>+
                 </h3>
-                <p>Happy Clients</p>
+                <p>Viewers</p>
               </Col>
             </Row>
           </Col>

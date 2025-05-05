@@ -21,7 +21,7 @@ const Header = () => {
       <header className="header">
 
         <div className="logo">
-          <img className="user-icon" src='/assets/about/user.jpg'/>
+          <img className="user-icon" src='/assets/about/user3.png'/>
           <p>Arun</p>
         </div>
         <nav className="nav-links">

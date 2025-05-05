@@ -11,7 +11,7 @@ export default function Clients() {
   const sliderRef = useRef(null);
 
   const images = useMemo(() => Array.from({ length: 9 }, (_, index) =>
-    `/assets/logo/${index + 1}.png`
+    `/assets/logo2/${index + 1}.png`
   ), []);
   const [loaded, setLoaded] = useState(Array(images.length).fill(false));
 
@@ -33,9 +33,9 @@ export default function Clients() {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     arrows:false,
     autoplaySpeed: 2000,
     responsive: [

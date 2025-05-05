@@ -28,9 +28,9 @@ export default function Services() {
         {
 
             id: 1,
-            icon: "",
+            icon: <i class="fa-solid fa-video"></i>,
             heading: "Cinematography",
-            desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings.",
+            desc: "Capturing compelling visuals with cinematic techniques to bring every story to life.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
             desc3: 'Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.',
             banner: "/assets/service/1.jpg",
@@ -72,9 +72,9 @@ export default function Services() {
         },
         {
             id: 2,
-            icon: "",
+            icon: <i class="fa fa-scissors" aria-hidden="true"></i>,
             heading: "Video editing ",
-            desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings.",
+            desc: "Crafting seamless narratives through precise cuts, pacing, and visual flow to elevate content impact.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
             desc3: 'Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.',
             banner: "/assets/service/1.jpg",
@@ -116,9 +116,9 @@ export default function Services() {
         },
         {
             id: 3,
-            icon: "Color correction ",
+            icon: <i class="fa fa-desktop" aria-hidden="true"></i>,
             heading: "Website Design",
-            desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings.",
+            desc: "Designing modern, responsive websites that elevate user experience and reflect your brand.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
             desc3: 'Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.',
             banner: "/assets/service/1.jpg",
@@ -160,9 +160,9 @@ export default function Services() {
         },
         {
             id: 4,
-            icon: "",
+            icon: <i class="fa-solid fa-wave-square"></i>,
             heading: "Sound design ",
-            desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings.",
+            desc: "Creating immersive audio landscapes that enhance emotion, realism, and storytelling depth.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
             desc3: 'Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.',
             banner: "/assets/service/1.jpg",
@@ -203,10 +203,10 @@ export default function Services() {
             ]
         },
         {
-            id: 4,
-            icon: "",
+            id: 5,
+            icon: <i class="fa-solid fa-photo-film"></i>,
             heading: "Motiongraphics",
-            desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings.",
+            desc: "Animating visuals with dynamic motion graphics to communicate ideas in a creative and engaging way.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
             desc3: 'Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.',
             banner: "/assets/service/1.jpg",
@@ -247,10 +247,10 @@ export default function Services() {
             ]
         },
         {
-            id: 4,
-            icon: "",
+            id: 6,
+            icon: <i class="fa fa-magic" aria-hidden="true"></i>,
             heading: "VFX",
-            desc: "A wonderful serenity has taken possession of my entire soul, like these sweet mornings.",
+            desc: "Adding high-quality visual effects to turn creative concepts into stunning on-screen realities.",
             desc2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dis posuere amet tincidunt commodo, velit. Ipsum, hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit. Et nisi in libero facilisis sed est. Elit curabitur amet risus bibendum. Posuere et eget orci, tempor enim.",
             desc3: 'Hac nibh fermentum nisi, platea condimentum cursus velit dui. Massa volutpat odio facilisis purus sit elementum. Non, sed velit dictum quam. Id risus pharetra est, at rhoncus, nec ullamcorper tincidunt. Id aliquet duis sollicitudin diam, elit sit.',
             banner: "/assets/service/1.jpg",

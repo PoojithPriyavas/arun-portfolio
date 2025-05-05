@@ -10,8 +10,8 @@ export default function Tech() {
 
   const sliderRef = useRef(null);
 
-  const images = useMemo(() => Array.from({ length: 9 }, (_, index) =>
-    `/assets/logo/${index + 1}.png`
+  const images = useMemo(() => Array.from({ length: 4 }, (_, index) =>
+    `/assets/logo3/${index + 1}.png`
   ), []);
   const [loaded, setLoaded] = useState(Array(images.length).fill(false));
 
@@ -33,7 +33,7 @@ export default function Tech() {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     arrows:false,

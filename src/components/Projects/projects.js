@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './projects.css'
-
+import ReelEmbed from './ReelEmbeded'
 function Projects() {
 
   const images = Array.from({ length: 9 }, (_, index) =>
@@ -10,45 +10,73 @@ function Projects() {
   const projectDetails = [
     {
       id: 1,
-      img: '/assets/projects/1.jpg',
-      title: 'branding',
+      img: '/assets/projects2/1.png',
+      title: 'Steve Harvey’s insights on the UAE’s progress',
       subtitle: 'project name',
-      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
+      link: 'https://www.instagram.com/reel/C5ircMdJXt-/'
     },
     {
       id: 2,
-      img: '/assets/projects/2.jpg',
-      title: 'branding',
+      img: '/assets/projects2/2.png',
+      title: 'Here’s how Max Maxwell went from multiple ...',
       subtitle: 'project name',
-      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
+      link: 'https://www.instagram.com/reel/C2cO2aBp-OL/'
     },
     {
       id: 3,
-      img: '/assets/projects/3.jpg',
-      title: 'branding',
+      img: '/assets/projects2/3.png',
+      title: 'How Dubai generates rain?',
       subtitle: 'project name',
-      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
+      link: 'https://www.instagram.com/reel/C37uSSbIrCw/'
     },
     {
       id: 4,
-      img: '/assets/projects/4.jpg',
-      title: 'branding',
+      img: '/assets/projects2/4.png',
+      title: 'video to avoid getting your insurance claim rejected...',
       subtitle: 'project name',
-      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
+      link: 'https://www.instagram.com/reel/C55CSvzpJEz/'
     },
     {
       id: 5,
-      img: '/assets/projects/5.jpg',
-      title: 'branding',
+      img: '/assets/projects2/5.png',
+      title: 'Sundeep caught Anand off guard while he...',
       subtitle: 'project name',
-      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
+      link: 'https://www.instagram.com/reel/DCrjAS8IIZg/'
     },
     {
       id: 6,
-      img: '/assets/projects/6.jpg',
-      title: 'branding',
+      img: '/assets/projects2/6.png',
+      title: 'A new way to move across the UAE has ...',
       subtitle: 'project name',
-      link: 'https://youtube.com/shorts/kPAbtqGoVi0?si=-d9g4-wo6Tz5mgIX'
+      link: 'https://www.instagram.com/reel/DCEh_P-oN2c/'
+    },
+    {
+      id: 7,
+      img: '/assets/projects2/7.png',
+      title: 'Sheikh Mohammed bin Rashid’s exceptional...',
+      subtitle: 'project name',
+      link: 'https://www.instagram.com/reel/C_-fCOqotOY/'
+    },
+    {
+      id: 8,
+      img: '/assets/projects2/8.png',
+      title: 'Bring Your Impossible...',
+      subtitle: 'project name',
+      link: 'https://www.instagram.com/reel/DABIzghITA5/'
+    },
+    {
+      id: 9,
+      img: '/assets/projects2/9.png',
+      title: 'Trust no one. In the game of Werewolf...',
+      subtitle: 'project name',
+      link: 'https://www.instagram.com/reel/DA0qHoKSs7N/'
+    },
+    {
+      id: 10,
+      img: '/assets/projects2/10.png',
+      title: 'Dubai’s new Humanitarian Golden Visa...',
+      subtitle: 'project name',
+      link: 'https://www.instagram.com/reel/DFLHtuKyXx4/'
     }
   ]
 
@@ -85,9 +113,9 @@ function Projects() {
           <div className="project-text">
             {prt.title}
           </div>
-          <div className="project-text2">
+          {/* <div className="project-text2">
             {prt.subtitle}
-          </div>
+          </div> */}
         </div>
       )}
       {isOpen && selectedProject && (
@@ -97,19 +125,12 @@ function Projects() {
               <button className="close-button" onClick={() => setIsOpen(false)}>&times;</button>
             </div>
             <div className="video-wrapper">
-              <iframe
-                src={selectedProject.link.replace("youtube.com/shorts/", "youtube.com/embed/")}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              <ReelEmbed link={selectedProject.link} />
             </div>
-
           </div>
-
         </div>
       )}
+
 
 
     </div>

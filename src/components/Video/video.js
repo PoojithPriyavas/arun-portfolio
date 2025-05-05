@@ -26,7 +26,7 @@ function Video() {
                 </video>
                 <motion.div className="content" style={{ opacity }}>
                     <h1 className="name">Hi, I'm Arun</h1>
-                    <h4 className="brand">Branding • Illustration • Design</h4>
+                    <h4 className="brand">Videographer • Editor • Visual Creator</h4>
                 </motion.div>
             </div>
         </section>
