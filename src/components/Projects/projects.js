@@ -105,6 +105,11 @@ function Projects() {
     setIsOpen(true);
   };
 
+  useEffect(() => {
+    const imageGrid = document.getElementById('projects');
+    imageGrid.classList.add('fade-in');
+  }, []);
+
   return (
     <div className="image-grid" id="projects">
       {projectDetails.map((prt, i) =>
@@ -118,6 +123,7 @@ function Projects() {
           </div> */}
         </div>
       )}
+
       {isOpen && selectedProject && (
         // In your Projects component's return statement
         <div className="modal-overlay" onClick={() => setIsOpen(false)}>
@@ -135,6 +141,7 @@ function Projects() {
 
 
     </div>
+
   );
 
 }

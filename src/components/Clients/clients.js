@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState , useMemo , useRef} from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import './clients.css'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -35,9 +35,10 @@ export default function Clients() {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: false,
-    arrows:false,
-    autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000, 
+    arrows: false,
+   
     responsive: [
       {
         breakpoint: 1024,
@@ -64,6 +65,9 @@ export default function Clients() {
 
   return (
     <div className="conatiner client">
+      <br></br>
+      <br></br>
+
       <Slider {...settings}>
         {images.map((src, i) => (
           <div className='custom-slider' key={i}>
@@ -71,6 +75,9 @@ export default function Clients() {
           </div>
         ))}
       </Slider>
+      <br></br>
+      <br></br>
+
     </div>
   );
 }

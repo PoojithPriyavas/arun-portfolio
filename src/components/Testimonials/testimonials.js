@@ -108,42 +108,48 @@ export default function Testimonials() {
   ]
 
   return (
-    <div className="tstml" style={{padding:'60px 0'}}>
-    <div className="container">
-      <div className="tstml-main">
-        <div className="tstml-text">
-          <p className="tstml-title">Testimonials</p>
-          <h1 style={{ color: '#fff' }}>What My Client Say.</h1>
-        </div>
-        <Slider {...settings}>
-          {testimonialDetails.map((item, i) => (
-            <div className="custom-slide-div">
-            <div className="custom-slide" key={i}>
-              <p style={{ color: '#fff' }}>{item.quote}</p>
-              <h3 style={{ color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span className="line"></span>
-                <img
-                  src="/assets/about/user.jpg"
-                  alt="User"
-                  className="name-img"
-                  style={{ width: '30px', height: '30px', marginRight: '10px',borderRadius:'50%' }}
-                />
-                {item.name}
-                {/* <img
+    <div className="tstml" style={{ padding: '60px 0' }}>
+      <div className="container">
+        <div className="tstml-main">
+          <div className="tstml-text">
+            <p className="tstml-title">Testimonials</p>
+            <h1 style={{ color: '#fff' }}>What My Client Say.</h1>
+          </div>
+          <br></br>
+          <br></br>
+
+          <Slider {...settings}>
+            {testimonialDetails.map((item, i) => (
+              <div className="custom-slide-div">
+                <div className="custom-slide" key={i}>
+                  <p style={{ color: '#fff' }}>{item.quote}</p>
+                  <h3 style={{ color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <span className="line"></span>
+                    <img
+                      src="/assets/about/user.jpg"
+                      alt="User"
+                      className="name-img"
+                      style={{ width: '30px', height: '30px', marginRight: '10px', borderRadius: '50%' }}
+                    />
+                    {item.name}
+                    {/* <img
                   src='/assets/icons/quote.png'
                   alt="Quote"
                   className="quote-img"
                   style={{ width: '30px', height: '30px', marginLeft: '10px' }}
                 /> */}
-              </h3>
-            </div>
-            </div>
-          ))}
-        </Slider>
-        {/* <div className="tstml-bg"><h1>Review</h1></div> */}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </Slider>
+          <br></br>
+          <br></br>
+
+          {/* <div className="tstml-bg"><h1>Review</h1></div> */}
+        </div>
       </div>
     </div>
-  </div>
 
 
   )

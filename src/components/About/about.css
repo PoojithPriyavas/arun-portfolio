@@ -16,11 +16,13 @@
     background: #000;
 
 }
-@media(max-width:768px){
-    .about-div{
-        padding:60px 40px !important;
+
+@media(max-width:768px) {
+    .about-div {
+        padding: 60px 40px !important;
     }
 }
+
 .about-div .container {
 
     position: relative;
@@ -59,8 +61,9 @@
         flex-direction: column;
         text-align: center;
     }
-    .text-center{
-        display:flex;
+
+    .text-center {
+        display: flex;
         justify-content: center;
     }
 }
@@ -76,9 +79,10 @@
 .abt-img {
     width: 100%;
     max-width: 545px;
-    /* -webkit-filter: grayscale(1); */
-    /* filter: grayscale(1); */
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
 }
+
 /* 
 @media (min-width: 768px) and (max-width: 1399px) {
     .about-text {
@@ -113,7 +117,7 @@
             z-index: 1;
             padding: 10px 15px;
             text-align: center;
-            width:300px
+            width: 300px
         }
 
         .abt-me::before {
@@ -158,7 +162,7 @@
             margin-bottom: 20px;
             font-weight: bold;
             margin-top: 0;
-            text-align:justify;
+            /* text-align: justify; */
 
         }
 
@@ -168,7 +172,7 @@
             font-weight: 300;
             line-height: 160%;
             overflow: hidden;
-            text-align:justify;
+            text-align: justify;
         }
     }
 
@@ -254,7 +258,7 @@
             font-size: 53px;
             margin-top: 0;
             margin-bottom: 0.5em;
-            text-align: justify;
+            /* text-align: justify; */
             text-justify: inter-word;
         }
 
@@ -268,7 +272,7 @@
             max-width: 540px;
             font-weight: bold;
             margin-top: 0;
-            text-align:justify;
+            /* text-align: justify; */
 
         }
 
@@ -279,7 +283,7 @@
             line-height: 160%;
             max-width: 560px;
             overflow: hidden;
-            text-align:justify;
+            text-align: justify;
         }
     }
 
@@ -311,109 +315,7 @@
     }
 }
 
-/* .about-text {
-    text-align: justify;
-    position: relative;
-    z-index: 1;
 
-    .abt-me {
-       
-        color: #e5540a;
-        display: inline-block;
-        font-family: "Open Sans", sans-serif;
-        font-size: 18px;
-        font-weight: 400;
-        letter-spacing: 0.01em;
-        line-height: 26px;
-        margin-top: 0;
-        margin-bottom: 10px;
-        padding-left: 15px;
-        position: relative;
-        text-transform: capitalize;
-        z-index: 1;
-        padding: 10px 15px;
-    }
-
-    .abt-me::before {
-        border: 2px solid #e5540a;
-        content: "";
-        height: 39px;
-        width: 39px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: -1;
-    }
-
-    .abt-me::after {
-        background: #090909;
-        content: "";
-        height: 20px;
-        width: 20px;
-        position: absolute;
-        left: 34px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: -1;
-    }
-
-    h2 {
-        color: #fff;
-        font-size: 53px;
-        margin-top: 0;
-        margin-bottom: 0.5em;
-    }
-
-    h5 {
-        color: #a9a9a9;
-        font-size: 27px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 104.8%;
-        margin-bottom: 20px;
-        max-width: 540px;
-        font-weight: bold;
-        margin-top: 0;
-
-    }
-
-    .abt-content {
-        color: #919195;
-        font-size: 20px;
-        font-weight: 300;
-        line-height: 160%;
-        max-width: 560px;
-        overflow: hidden;
-    }
-} */
-
-/* .abt-count {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    max-width: 450px;
-}
-
-.abt-count-item {
-    h3 {
-        color: #e5540a;
-        font-size: 56px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 50px;
-        margin-bottom: .5rem;
-        margin-top: 0;
-    }
-
-    p {
-        color: #a9a9a9;
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 160%;
-        margin-bottom: 0;
-    }
-} */
 @media(min-width:768px) {
     .about-img-text {
         align-items: center;
@@ -430,6 +332,7 @@
         margin-top: -200px;
         text-align: center;
         width: 201px;
+        color: #fff;
 
     }
 

@@ -304,9 +304,16 @@ export default function Services() {
 
         <div className="service-main" id="services">
             <div className="service-text">
+                <br></br>
+                <br></br>
+
+                <br></br>
                 <p className="srv-title">Check Services</p>
                 <h1 style={{ color: '#fff' }}>My Best Services</h1>
             </div>
+            <br></br>
+            <br></br>
+
 
             <div className="srv-section">
                 <Row className="srv-section-row">
@@ -366,6 +373,7 @@ export default function Services() {
                             )}
                         </ul>
                     </div>
+
 
 
                 </div>
