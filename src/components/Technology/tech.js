@@ -68,7 +68,7 @@ export default function Tech() {
       <div className="tech-main">
       <div className="tech-text">
           <p className="tech-title">Softwares</p>
-          <h1 style={{ color: '#fff' }}>Softwares I Work With</h1>
+          <h1 style={{ color: '#fff',fontWeight:700 }} className='font-mulish'>Softwares I Work With</h1>
         </div>
     <div className="conatiner tech-container">
       <Slider {...settings}>

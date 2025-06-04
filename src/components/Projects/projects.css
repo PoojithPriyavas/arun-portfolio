@@ -102,7 +102,7 @@
   }
 } */
 /* Modal styling (already working fine but you can improve if needed) */
-.modal-overlay {
+.modal-overlay-one {
   position: fixed;
   top: 0;
   left: 0;
@@ -115,7 +115,7 @@
   z-index: 1000;
 }
 
-.modal-container {
+.modal-container-one {
   position: relative;
   width: 90%;
   max-width: 400px;
@@ -126,6 +126,7 @@
   overflow-y: auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 
 }
 
@@ -149,13 +150,14 @@
   border: none;
 }
 
-.close-button-container {
+.close-button-container-one {
   text-align: right;
 }
 
-.close-button {
+.close-button-one {
   background: transparent;
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  z-index: 9999;
 }

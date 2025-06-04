@@ -89,6 +89,40 @@
         padding-left: 30px;
     }
 } */
+@media(max-width:992px) {
+    .abt-me-wrap {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .justified-heading {
+        text-align: center;
+    }
+
+
+}
+
+@media (min-width: 991px) {
+    .about-text {
+        .abt-me {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            text-align: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .abt-me::before {
+            left: calc(50% - 150px);
+        }
+
+        .abt-me::after {
+            left: calc(50% - 150px + 34px);
+        }
+    }
+}
 
 
 @media (max-width:768px) {
@@ -149,7 +183,7 @@
             font-size: 31px;
             margin-top: 0;
             margin-bottom: 0.5em;
-            text-align: justify;
+            /* text-align: justify; */
             text-justify: inter-word;
         }
 
@@ -207,7 +241,7 @@
 
 @media(min-width:769px) {
     .about-text {
-        text-align: justify;
+        /* text-align: justify; */
         position: relative;
         z-index: 1;
 
@@ -227,6 +261,7 @@
             text-transform: capitalize;
             z-index: 1;
             padding: 10px 15px;
+            text-align: justify;
         }
 
         .abt-me::before {
@@ -269,7 +304,7 @@
             font-weight: 300;
             line-height: 104.8%;
             margin-bottom: 20px;
-            max-width: 540px;
+            /* max-width: 45vw; */
             font-weight: bold;
             margin-top: 0;
             /* text-align: justify; */
@@ -281,7 +316,7 @@
             font-size: 20px;
             font-weight: 300;
             line-height: 160%;
-            max-width: 560px;
+            /* max-width: 560px; */
             overflow: hidden;
             text-align: justify;
         }
@@ -291,7 +326,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: 30px;
-        max-width: 450px;
+        /* max-width: 450px; */
     }
 
     .abt-count-item {

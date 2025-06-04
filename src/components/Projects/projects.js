@@ -126,10 +126,10 @@ function Projects() {
 
       {isOpen && selectedProject && (
         // In your Projects component's return statement
-        <div className="modal-overlay" onClick={() => setIsOpen(false)}>
-          <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-            <div className="close-button-container">
-              <button className="close-button" onClick={() => setIsOpen(false)}>&times;</button>
+        <div className="modal-overlay-one" onClick={() => setIsOpen(false)}>
+          <div className="modal-container-one" onClick={(e) => e.stopPropagation()}>
+            <div className="close-button-container-one">
+              <button className="close-button-one" onClick={() => setIsOpen(false)}>&times;</button>
             </div>
             <div className="video-wrapper">
               <ReelEmbed link={selectedProject.link} />

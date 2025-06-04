@@ -113,7 +113,7 @@ export default function Testimonials() {
         <div className="tstml-main">
           <div className="tstml-text">
             <p className="tstml-title">Testimonials</p>
-            <h1 style={{ color: '#fff' }}>What My Client Say.</h1>
+            <h1 style={{ color: '#fff',fontWeight:700 }} className='font-mulish' >What My Client Say.</h1>
           </div>
           <br></br>
           <br></br>

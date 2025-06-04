@@ -52,10 +52,13 @@ export default function About() {
 
         {/* Right Side - Text Section */}
         <Col lg={6} className="about-text">
-          <p className="abt-me">About Me</p>
+          <div className="abt-me-wrap">
+            <p className="abt-me">About Me</p>
+          </div>
+
           <h2 class="justified-heading">
             Welcome to Arun,<br />
-            Capturing Moments,<br />
+            Capturing Moments,
             Crafting Stories.
           </h2>
           <h5>
