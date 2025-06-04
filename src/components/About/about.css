@@ -89,7 +89,7 @@
         padding-left: 30px;
     }
 } */
-@media(max-width:992px) {
+@media(max-width:991px) {
     .abt-me-wrap {
         display: flex;
         justify-content: center;
@@ -103,8 +103,11 @@
 
 }
 
-@media (min-width: 991px) {
+@media (min-width: 992px) {
     .about-text {
+        p{
+            width: 100% !important;
+        }
         .abt-me {
             margin-left: auto;
             margin-right: auto;
@@ -120,6 +123,12 @@
 
         .abt-me::after {
             left: calc(50% - 150px + 34px);
+        }
+        .justified-heading{
+            text-align: start;
+        }
+        h5{
+            text-align: start;
         }
     }
 }
@@ -381,8 +390,9 @@
 }
 
 .about-text h2,
-.about-text h5,
-.about-text p {
+.about-text h5
+/* ,.about-text p  */
+{
     /* margin: 0; 
     padding: 0;  */
     width: 100%;

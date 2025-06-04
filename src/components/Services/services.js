@@ -336,7 +336,7 @@ export default function Services() {
 
             </div>
 
-            <div class="service-bg"><h1>Services</h1></div>
+            {/* <div class="service-bg"><h1>Services</h1></div> */}
             {isOpen && selectedService && (
 
                 <div className="modal-overlay">

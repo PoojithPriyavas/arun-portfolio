@@ -71,9 +71,9 @@ export default function About() {
           </p>
 
           {/* Stats Section */}
-          <Row className="text-center abt-count">
+          <div className="text-center abt-count" style={{display:'flex',justifyContent:'space-around'}}>
             {stats.map((item, index) => (
-              <Col sm={4} className="abt-count-item">
+              <div sm={4} className="abt-count-item">
                 <h3>
                   <span> <CountUp
                     start={0}
@@ -83,7 +83,7 @@ export default function About() {
                   /></span>
                 </h3>
                 <p>{item.description}</p>
-              </Col>
+              </div>
             ))}
             {/* <Col sm={4} className="abt-count-item">
               <h3>
@@ -97,7 +97,7 @@ export default function About() {
               </h3>
               <p>Viewers</p>
             </Col> */}
-          </Row>
+          </div>
         </Col>
       </Row>
       {/* </Container> */}
