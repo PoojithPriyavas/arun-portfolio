@@ -308,8 +308,8 @@ export default function Services() {
                 <br></br>
 
                 <br></br>
-                <p className="srv-title">Check Services</p>
-                <h1 style={{ color: '#fff' }}>My Best Services</h1>
+                <p className="srv-title" style={{fontWeight:700}}>Check Services</p>
+                <h1 style={{ color: '#fff' ,fontWeight:700}} className="font-mullish">My Best Services</h1>
             </div>
             <br></br>
             <br></br>
@@ -321,8 +321,8 @@ export default function Services() {
                         <Col lg={4} md={6} sm={12} key={index} className="mb-4">
                             <div className="service-items">
                                 <div className="fi">{item.icon}</div>
-                                <h2>{item.heading}</h2>
-                                <p className="truncate-2-lines">{item.desc}</p>
+                                <h2 className="chakra-petch-semibold ">{item.heading}</h2>
+                                <p className="truncate-2-lines font-mulish">{item.desc}</p>
                                 <button
                                     className="read-more"
                                     onClick={() => handleOpenModal(item)}
