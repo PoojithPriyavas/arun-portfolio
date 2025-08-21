@@ -7,7 +7,9 @@
   opacity: 0;
   transition: opacity 3s ease-in-out;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 
@@ -22,6 +24,18 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }
+
+/* @media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+} */
 
 
 

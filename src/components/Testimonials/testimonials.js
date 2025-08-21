@@ -1,49 +1,13 @@
-// import React, { useRef, useState } from 'react';
-// import './testimonials.css';
-// import SwiperCore, { Navigation, Pagination ,Autoplay} from "swiper";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-
-// SwiperCore.use([Navigation, Pagination,Autoplay]);
-
-
-// export default function App() {
-//   return (
-//     <div className='testimonial'>
-//       <Swiper
-//         slidesPerView={3}
-//         spaceBetween={30}
-//         pagination={{
-//           clickable: true,
-//         }}
-//         modules={[Pagination,Autoplay]}
-//         className="mySwiper"
-//       >
-//         <SwiperSlide>Slide 1</SwiperSlide>
-//         <SwiperSlide>Slide 2</SwiperSlide>
-//         <SwiperSlide>Slide 3</SwiperSlide>
-//         <SwiperSlide>Slide 4</SwiperSlide>
-//         <SwiperSlide>Slide 5</SwiperSlide>
-//         <SwiperSlide>Slide 6</SwiperSlide>
-//         <SwiperSlide>Slide 7</SwiperSlide>
-//         <SwiperSlide>Slide 8</SwiperSlide>
-//         <SwiperSlide>Slide 9</SwiperSlide>
-//       </Swiper>
-//     </div>
-//   );
-// }
-
-
-import React from 'react';
+import React, { useRef } from 'react';
 import './testimonials.css'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-
 import "slick-carousel/slick/slick-theme.css";
+import { motion, useInView } from "framer-motion";
 
 export default function Testimonials() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, threshold: 0.1 });
 
   const settings = {
     dots: false,
@@ -82,8 +46,8 @@ export default function Testimonials() {
         }
       }
     ]
-
   }
+
   const testimonialDetails = [
     {
       id: 1,
@@ -107,51 +71,113 @@ export default function Testimonials() {
     }
   ]
 
+
+  // Animation variants (matching the service component)
+  const containerVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const titleVariant = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideVariant = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
-    <div className="tstml" style={{ padding: '60px 0' }}>
+    <motion.div 
+      className="tstml" 
+      style={{ padding: '60px 0' }}
+      ref={sectionRef}
+      variants={containerVariant}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+    >
       <div className="container">
         <div className="tstml-main">
-          <div className="tstml-text">
-            <p className="tstml-title">Testimonials</p>
-            <h1 style={{ color: '#fff',fontWeight:700 }} className='font-mulish' >What My Client Say.</h1>
-          </div>
-          <br></br>
-          <br></br>
+          <motion.div className="tstml-text" variants={titleVariant}>
+            <motion.p 
+              className="tstml-title"
+              whileHover={{ 
+                scale: 1.05,
+                color: "#fff",
+                transition: { duration: 0.3 }
+              }}
+            >
+              Testimonials
+            </motion.p>
+            <motion.h1 
+              style={{ color: '#fff', fontWeight: 700 }} 
+              className='font-mulish'
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              What My Client Say.
+            </motion.h1>
+          </motion.div>
+          <br />
+          <br />
 
-          <Slider {...settings}>
-            {testimonialDetails.map((item, i) => (
-              <div className="custom-slide-div">
-                <div className="custom-slide" key={i}>
-                  <p style={{ color: '#fff' }}>{item.quote}</p>
-                  <h3 style={{ color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <span className="line"></span>
-                    <img
-                      src="/assets/about/user.jpg"
-                      alt="User"
-                      className="name-img"
-                      style={{ width: '30px', height: '30px', marginRight: '10px', borderRadius: '50%' }}
-                    />
-                    {item.name}
-                    {/* <img
-                  src='/assets/icons/quote.png'
-                  alt="Quote"
-                  className="quote-img"
-                  style={{ width: '30px', height: '30px', marginLeft: '10px' }}
-                /> */}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </Slider>
-          <br></br>
-          <br></br>
-
-          {/* <div className="tstml-bg"><h1>Review</h1></div> */}
+          <motion.div
+            variants={slideVariant}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ delay: 0.8 }}
+          >
+            <Slider {...settings}>
+              {testimonialDetails.map((item, i) => (
+                <motion.div 
+                  className="custom-slide-div" 
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1 + i * 0.1, duration: 0.6 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <div className="custom-slide">
+                    <p style={{ color: '#fff' }}>{item.quote}</p>
+                    <h3 style={{ color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <span className="line"></span>
+                      <img
+                        src="/assets/about/user.jpg"
+                        alt="User"
+                        className="name-img"
+                        style={{ width: '30px', height: '30px', marginRight: '10px', borderRadius: '50%' }}
+                      />
+                      {item.name}
+                    </h3>
+                  </div>
+                </motion.div>
+              ))}
+            </Slider>
+          </motion.div>
+          <br />
+          <br />
         </div>
       </div>
-    </div>
-
-
+    </motion.div>
   )
 }
-

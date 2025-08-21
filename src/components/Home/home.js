@@ -13,8 +13,9 @@ import Clients from '../Clients/clients';
 import Tech from '../Technology/tech';
 
 function Home() {
-    const [loading, setLoading] = useState(true);
-    const [contentVisible, setContentVisible] = useState(false);
+    // Temporarily commented out loader
+    const [loading, setLoading] = useState(false);
+    const [contentVisible, setContentVisible] = useState(true);
 
     const handleLoaderComplete = () => {
         setLoading(false);
@@ -23,9 +24,11 @@ function Home() {
 
     return (
         <>
+            {/* Loader temporarily commented out
             {loading ? (
                 <Loader duration={3000} onComplete={handleLoaderComplete} />
             ) : null}
+            */}
             
             <div className={`content-container ${contentVisible ? 'visible' : 'hidden'}`}>
                 <Header />

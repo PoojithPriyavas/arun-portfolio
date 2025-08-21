@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./header.css";
 import { Menu, X } from "lucide-react";
 
-
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger fade-in effect after component mounts
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleScroll = (event, id) => {
     event.preventDefault();
     const section = document.getElementById(id);
@@ -15,11 +22,9 @@ const Header = () => {
     }
   };
 
-
   return (
     <div className="container">
-      <header className="header">
-
+      <header className={`header ${isVisible ? 'fade-in' : ''}`}>
         <div className="logo">
           <img className="user-icon" src='/assets/about/user3.png'/>
           <p>Arun</p>
@@ -30,26 +35,13 @@ const Header = () => {
           <a href="" onClick={(e) => handleScroll(e, "projects")}>Designs</a>
           <a href="" onClick={(e) => handleScroll(e, "services")}>Services</a>
           <a href="" onClick={(e) => handleScroll(e, "contact")}>Contact</a>
-          {/* <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-facebook-f"></i>
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-github"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </div> */}
-
         </nav>
         <div className="lets-connect">
           <a target="_blank" href="https://wa.me/+916238470880">Let's Connect</a>
         </div>
         <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <Menu size={28} color="white" /> : <Menu size={28} color="white" />}
+          {isOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
         </button>
-
         {isOpen && (
           <div className="mobile-menu">
             <a href="#home">Home</a>
@@ -58,13 +50,13 @@ const Header = () => {
             <a href="#contact">Contact</a>
             <div className="mobile-social-icons">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-facebook-f"></i>
+                <i className="fa fa-facebook-f"></i>
               </a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-github"></i>
+                <i className="fa fa-github"></i>
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-twitter"></i>
+                <i className="fa fa-twitter"></i>
               </a>
             </div>
           </div>

@@ -10,8 +10,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: 7%;
-
-  max-width: 1200px;
+  max-width: min(100%, 1200px);
   margin: 0 auto;
   /* Centering */
   /* background: #000; */
@@ -231,4 +230,145 @@
 
 .mobile-menu {
   color: #fff
+}
+/* Add these styles to your existing header.css */
+
+/* Main fade effect for header */
+.header {
+  /* Keep all your existing styles and add these */
+  opacity: 0;
+  transform: translateX(-50%) translateY(-20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header.fade-in {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Enhanced hover effects */
+.lets-connect {
+  /* Keep existing styles and add */
+  transition: all 0.3s ease;
+}
+
+.lets-connect:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  transform: translateY(-2px);
+}
+
+.nav-links a {
+  /* Keep existing styles and add */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #e87638;
+  transform: translateY(-2px);
+}
+
+/* Underline effect for nav links */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e87638;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Menu button hover effect */
+.menu-button {
+  /* Keep existing styles and add */
+  transition: transform 0.3s ease;
+}
+
+.menu-button:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile menu slide animation */
+.mobile-menu {
+  /* Keep existing styles and add */
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced mobile menu links */
+.mobile-menu a {
+  /* Keep existing styles and add */
+  transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #e87638;
+  transform: translateX(10px);
+}
+
+/* Social icons hover effect */
+.social-icons a {
+  /* Keep existing styles and add */
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #e87638;
+  transform: scale(1.2);
+}
+
+.mobile-social-icons a {
+  /* Keep existing styles and add */
+  transition: all 0.3s ease;
+}
+
+.mobile-social-icons a:hover {
+  color: #e87638;
+  transform: scale(1.2);
+}
+
+/* Staggered animations for nav links */
+.nav-links a:nth-child(1) { animation-delay: 0.1s; }
+.nav-links a:nth-child(2) { animation-delay: 0.2s; }
+.nav-links a:nth-child(3) { animation-delay: 0.3s; }
+.nav-links a:nth-child(4) { animation-delay: 0.4s; }
+.nav-links a:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header.fade-in .nav-links a {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.header.fade-in .lets-connect {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+.header.fade-in .logo {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
 }
