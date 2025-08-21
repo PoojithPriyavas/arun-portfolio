@@ -3,8 +3,8 @@
     width: 100%;
     padding: 50px 40px;
     background-color: #000;
-    /* position: relative;
-    z-index: -1; */
+    position: relative;
+    z-index: 1;
 }
 
 .slick-slide {

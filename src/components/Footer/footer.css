@@ -1,10 +1,11 @@
-/* .footer {
+.footer {
   position: relative;
   width: 100%;
   background-color: #212121;
   padding-top: 120px;
   padding-bottom: 120px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .footer-container {
