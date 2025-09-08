@@ -3,6 +3,7 @@ import './home.css';
 import Header from '../Header/header';
 import Loader from '../Loader/loader';
 import Video from '../Video/video';
+import { FirebaseExample, ProjectsWithFirebase, AddProjectForm } from '../FirebaseExample';
 import Projects from '../Projects/projects';
 import Footer from '../Footer/footer';
 import About from '../About/about';
@@ -29,7 +30,7 @@ function Home() {
                 <Loader duration={3000} onComplete={handleLoaderComplete} />
             ) : null}
             */}
-            
+
             <div className={`content-container ${contentVisible ? 'visible' : 'hidden'}`}>
                 <Header />
                 <Video />
@@ -37,9 +38,21 @@ function Home() {
                 <Clients />
                 <About />
                 <Services />
-                <Testimonials/>
+                <Testimonials />
                 <Tech />
                 {/* <Contact /> */}
+                {/* Uncomment to use Firebase examples */}
+
+                <div style={{ padding: '2rem 0', background: '#f9f9f9' }}>
+                    <FirebaseExample />
+                </div>
+                <div style={{ padding: '2rem 0' }}>
+                    <ProjectsWithFirebase />
+                </div>
+                <div style={{ padding: '2rem 0', background: '#f9f9f9' }}>
+                    <AddProjectForm />
+                </div>
+
                 <Footer />
             </div>
         </>
