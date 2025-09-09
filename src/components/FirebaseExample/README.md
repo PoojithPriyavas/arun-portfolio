@@ -158,8 +158,40 @@ const listFiles = async (directoryPath) => {
 };
 ```
 
-## Example Component
-Check out the `FirebaseExample.js` component for a working example of how to fetch and display data from Firestore.
+### 5. Using the Storage Utility Functions (Method 1)
+
+For a more reusable approach, you can use the utility functions in `src/utils/storageUtils.js`:
+
+```javascript
+import { getImageURL, constructImagePath } from '../../utils/storageUtils';
+
+// Example 1: Get URL with complete path
+const getCompleteImageURL = async () => {
+  try {
+    const url = await getImageURL('projects/image1.jpg');
+    console.log('Image URL:', url);
+    return url;
+  } catch (err) {
+    console.error('Error:', err);
+  }
+};
+
+// Example 2: Construct path and get URL
+const getConstructedImageURL = async () => {
+  try {
+    const imagePath = constructImagePath('projects', 'image1.jpg');
+    const url = await getImageURL(imagePath);
+    console.log('Image URL:', url);
+    return url;
+  } catch (err) {
+    console.error('Error:', err);
+  }
+};
+```
+
+## Example Components
+- Check out the `FirebaseExample.js` component for a working example of how to fetch and display data from Firestore.
+- See `ImageUrlExample.js` for a complete example of generating image URLs from Firebase Storage.
 
 ## Best Practices
 1. Always handle errors properly with try/catch blocks
@@ -167,6 +199,7 @@ Check out the `FirebaseExample.js` component for a working example of how to fet
 3. Consider implementing caching for frequently accessed data
 4. Use Firebase security rules to protect your data
 5. Keep sensitive operations on the server side when possible
+6. When storing image references in Firestore, store the full download URL rather than just the path
 
 ## Troubleshooting
 - If you encounter CORS issues with Firebase Storage, make sure your Firebase Storage rules are properly configured

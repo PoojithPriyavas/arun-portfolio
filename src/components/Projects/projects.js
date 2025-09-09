@@ -1,131 +1,196 @@
 import React, { useState, useEffect } from "react";
+import { db, storage } from '../../firebase'; 
+import { collection, getDocs } from 'firebase/firestore';
+import { ref, getDownloadURL } from 'firebase/storage';
 import './projects.css'
 import ReelEmbed from './ReelEmbeded'
+
 function Projects() {
-
-  const images = Array.from({ length: 9 }, (_, index) =>
-    `/assets/projects/${index + 1}.jpg`
-  );
-
-  const projectDetails = [
-    {
-      id: 1,
-      img: '/assets/projects2/1.png',
-      title: 'Steve Harvey’s insights on the UAE’s progress',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/C5ircMdJXt-/'
-    },
-    {
-      id: 2,
-      img: '/assets/projects2/2.png',
-      title: 'Here’s how Max Maxwell went from multiple ...',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/C2cO2aBp-OL/'
-    },
-    {
-      id: 3,
-      img: '/assets/projects2/3.png',
-      title: 'How Dubai generates rain?',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/C37uSSbIrCw/'
-    },
-    {
-      id: 4,
-      img: '/assets/projects2/4.png',
-      title: 'video to avoid getting your insurance claim rejected...',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/C55CSvzpJEz/'
-    },
-    {
-      id: 5,
-      img: '/assets/projects2/5.png',
-      title: 'Sundeep caught Anand off guard while he...',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/DCrjAS8IIZg/'
-    },
-    {
-      id: 6,
-      img: '/assets/projects2/6.png',
-      title: 'A new way to move across the UAE has ...',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/DCEh_P-oN2c/'
-    },
-    {
-      id: 7,
-      img: '/assets/projects2/7.png',
-      title: 'Sheikh Mohammed bin Rashid’s exceptional...',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/C_-fCOqotOY/'
-    },
-    {
-      id: 8,
-      img: '/assets/projects2/8.png',
-      title: 'Bring Your Impossible...',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/DABIzghITA5/'
-    },
-    {
-      id: 9,
-      img: '/assets/projects2/9.png',
-      title: 'Trust no one. In the game of Werewolf...',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/DA0qHoKSs7N/'
-    },
-    {
-      id: 10,
-      img: '/assets/projects2/10.png',
-      title: 'Dubai’s new Humanitarian Golden Visa...',
-      subtitle: 'project name',
-      link: 'https://www.instagram.com/reel/DFLHtuKyXx4/'
-    }
-  ]
-
-  const [loaded, setLoaded] = useState(Array(images.length).fill(false));
+  const [projectDetails, setProjectDetails] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [loaded, setLoaded] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
-
-  useEffect(() => {
-    images.forEach((src, index) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        setLoaded((prev) => {
-          const newLoaded = [...prev];
-          newLoaded[index] = true;
-          return newLoaded;
-        });
-      };
-    });
-  }, [images]);
-
   const [isOpen, setIsOpen] = useState(false);
+  const [imageUrls, setImageUrls] = useState({});
 
+  // Fetch projects from Firebase
+  const fetchProjects = async () => {
+    try {
+      setLoading(true);
+      console.log("Fetching projects from Firebase...");
+      
+      const querySnapshot = await getDocs(collection(db, 'project'));
+      const projects = [];
+      const urls = {};
+
+      // Process each document
+      for (const doc of querySnapshot.docs) {
+        const data = doc.data();
+        
+        const project = {
+          id: doc.id,
+          title: data.title || 'Untitled Project',
+          subtitle: data.subtitle || 'project name',
+          link: data.link || '',
+          img: data.img || '', // This is the filename from Firebase Storage
+          originalData: data // Keep original data for debugging
+        };
+
+        projects.push(project);
+
+        // Generate image URL if image exists
+        if (project.img) {
+          try {
+            const imageUrl = await getImageURL(project.img);
+            urls[project.id] = imageUrl;
+            console.log(`Generated URL for ${project.img}: ${imageUrl}`);
+          } catch (err) {
+            console.warn(`Failed to get URL for ${project.img}:`, err);
+            urls[project.id] = null;
+          }
+        }
+      }
+
+      console.log("Fetched projects:", projects);
+      setProjectDetails(projects);
+      setImageUrls(urls);
+      setLoaded(Array(projects.length).fill(true));
+      setLoading(false);
+
+    } catch (err) {
+      console.error('Error fetching projects: ', err);
+      setError(`Failed to fetch projects: ${err.message}`);
+      setLoading(false);
+    }
+  };
+
+  // Get image URL from Firebase Storage
+  const getImageURL = async (imageName) => {
+    try {
+      if (!imageName || typeof imageName !== 'string') {
+        throw new Error('Invalid image name provided');
+      }
+
+      // Create a reference to the file in the root directory of storage
+      const fileRef = ref(storage, imageName);
+      
+      // Get the download URL
+      const url = await getDownloadURL(fileRef);
+      
+      return url;
+    } catch (err) {
+      console.error(`Error getting image URL for ${imageName}:`, err);
+      
+      // More specific error messages
+      if (err.code === 'storage/object-not-found') {
+        console.error(`Image not found in storage: ${imageName}`);
+      } else if (err.code === 'storage/unauthorized') {
+        console.error('Unauthorized access to storage');
+      }
+      
+      throw err;
+    }
+  };
+
+  // Handle opening modal
   const handleOpenModal = (project) => {
     setSelectedProject(project);
-    console.log("project", project)
+    console.log("Selected project:", project);
     setIsOpen(true);
   };
 
+  // Fetch data when component mounts
   useEffect(() => {
-    const imageGrid = document.getElementById('projects');
-    imageGrid.classList.add('fade-in');
+    fetchProjects();
   }, []);
+
+  // Add fade-in effect after projects load
+  useEffect(() => {
+    if (!loading && projectDetails.length > 0) {
+      const imageGrid = document.getElementById('projects');
+      if (imageGrid) {
+        imageGrid.classList.add('fade-in');
+      }
+    }
+  }, [loading, projectDetails]);
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="image-grid loading-state" id="projects">
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading projects from Firebase...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="image-grid error-state" id="projects">
+        <div className="error-container">
+          <h3>Error Loading Projects</h3>
+          <p>{error}</p>
+          <button onClick={fetchProjects} className="retry-button">
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // No projects found
+  if (projectDetails.length === 0) {
+    return (
+      <div className="image-grid no-projects" id="projects">
+        <div className="no-projects-container">
+          <p>No projects found</p>
+          <button onClick={fetchProjects} className="retry-button">
+            Refresh
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="image-grid" id="projects">
-      {projectDetails.map((prt, i) =>
+      {projectDetails.map((prt, i) => (
         <div key={prt.id} className="image-container" onClick={() => handleOpenModal(prt)}>
-          <img src={prt.img} className="image" alt={prt.title} />
+          {/* Use Firebase Storage URL or fallback */}
+          <img 
+            src={imageUrls[prt.id] || '/assets/placeholder.png'} 
+            className="image" 
+            alt={prt.title}
+            onLoad={() => {
+              // Update loaded state when image loads
+              setLoaded(prev => {
+                const newLoaded = [...prev];
+                newLoaded[i] = true;
+                return newLoaded;
+              });
+            }}
+            onError={(e) => {
+              console.error(`Image failed to load for project ${prt.id}:`, prt.img);
+              // Set fallback image
+              e.target.src = '/assets/placeholder.png';
+            }}
+          />
           <div className="project-text">
             {prt.title}
           </div>
+          {/* Uncomment if you want to show subtitle */}
           {/* <div className="project-text2">
             {prt.subtitle}
           </div> */}
         </div>
-      )}
+      ))}
 
+      {/* Modal for displaying reel */}
       {isOpen && selectedProject && (
-        // In your Projects component's return statement
         <div className="modal-overlay-one" onClick={() => setIsOpen(false)}>
           <div className="modal-container-one" onClick={(e) => e.stopPropagation()}>
             <div className="close-button-container-one">
@@ -138,11 +203,32 @@ function Projects() {
         </div>
       )}
 
-
-
+      {/* Debug information - Remove in production */}
+      {/* {process.env.NODE_ENV === 'development' && (
+        <div className="debug-info" style={{
+          position: 'fixed',
+          bottom: '10px',
+          right: '10px',
+          background: 'rgba(0,0,0,0.8)',
+          color: 'white',
+          padding: '10px',
+          borderRadius: '5px',
+          fontSize: '12px',
+          maxWidth: '300px'
+        }}>
+          <strong>Debug Info:</strong><br/>
+          Projects loaded: {projectDetails.length}<br/>
+          Images with URLs: {Object.keys(imageUrls).length}<br/>
+          <button 
+            onClick={() => console.log('Projects:', projectDetails, 'URLs:', imageUrls)}
+            style={{ marginTop: '5px', fontSize: '10px' }}
+          >
+            Log Data
+          </button>
+        </div>
+      )} */}
     </div>
-
   );
-
 }
-export default Projects
+
+export default Projects;

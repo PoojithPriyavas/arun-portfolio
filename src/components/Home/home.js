@@ -12,6 +12,7 @@ import Testimonials from '../Testimonials/testimonials';
 import Contact from '../Contact/contact';
 import Clients from '../Clients/clients';
 import Tech from '../Technology/tech';
+import { Link } from 'react-router-dom';
 
 function Home() {
     // Temporarily commented out loader
@@ -41,9 +42,9 @@ function Home() {
                 <Testimonials />
                 <Tech />
                 {/* <Contact /> */}
-                {/* Uncomment to use Firebase examples */}
 
-                <div style={{ padding: '2rem 0', background: '#f9f9f9' }}>
+
+                {/* <div style={{ padding: '2rem 0', background: '#f9f9f9' }}>
                     <FirebaseExample />
                 </div>
                 <div style={{ padding: '2rem 0' }}>
@@ -52,6 +53,45 @@ function Home() {
                 <div style={{ padding: '2rem 0', background: '#f9f9f9' }}>
                     <AddProjectForm />
                 </div>
+                <div style={{ padding: '2rem 0', background: '#f0f0f0', textAlign: 'center' }}>
+                    <h2>Firebase Storage Image URL Example</h2>
+                    <p>Try our new tool for generating Firebase Storage image URLs</p>
+                    <Link 
+                        to="/image-url-example" 
+                        style={{
+                            display: 'inline-block',
+                            padding: '10px 20px',
+                            background: '#4285F4',
+                            color: 'white',
+                            textDecoration: 'none',
+                            borderRadius: '4px',
+                            fontWeight: 'bold',
+                            margin: '15px 0'
+                        }}
+                    >
+                        Try Image URL Generator
+                    </Link>
+                </div>
+                
+                <div style={{ padding: '2rem 0', background: '#e0f7fa', textAlign: 'center' }}>
+                    <h2>Firebase Storage Image Gallery</h2>
+                    <p>View images from Firebase Storage in a beautiful gallery</p>
+                    <Link 
+                        to="/image-gallery" 
+                        style={{
+                            display: 'inline-block',
+                            padding: '10px 20px',
+                            background: '#26a69a',
+                            color: 'white',
+                            textDecoration: 'none',
+                            borderRadius: '4px',
+                            fontWeight: 'bold',
+                            margin: '15px 0'
+                        }}
+                    >
+                        View Image Gallery
+                    </Link>
+                </div> */}
 
                 <Footer />
             </div>
