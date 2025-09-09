@@ -34,7 +34,7 @@ const Header = () => {
           <a href="" onClick={(e) => handleScroll(e, "about")} >About Me</a>
           <a href="" onClick={(e) => handleScroll(e, "projects")}>Designs</a>
           <a href="" onClick={(e) => handleScroll(e, "services")}>Services</a>
-          <a href="" onClick={(e) => handleScroll(e, "contact")}>Contact</a>
+          {/* <a href="" onClick={(e) => handleScroll(e, "contact")}>Contact</a> */}
         </nav>
         <div className="lets-connect">
           <a target="_blank" href="https://wa.me/+916238470880">Let's Connect</a>
