@@ -177,7 +177,7 @@
     padding: 10px 0;
     text-align: center;
     z-index: 999;
-    padding-left:10px;
+    padding-left: 10px;
   }
 
   .mobile-menu a {
@@ -231,6 +231,7 @@
 .mobile-menu {
   color: #fff
 }
+
 /* Add these styles to your existing header.css */
 
 /* Main fade effect for header */
@@ -305,6 +306,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -344,17 +346,32 @@
 }
 
 /* Staggered animations for nav links */
-.nav-links a:nth-child(1) { animation-delay: 0.1s; }
-.nav-links a:nth-child(2) { animation-delay: 0.2s; }
-.nav-links a:nth-child(3) { animation-delay: 0.3s; }
-.nav-links a:nth-child(4) { animation-delay: 0.4s; }
-.nav-links a:nth-child(5) { animation-delay: 0.5s; }
+.nav-links a:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.nav-links a:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.nav-links a:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.nav-links a:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.nav-links a:nth-child(5) {
+  animation-delay: 0.5s;
+}
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -371,4 +388,31 @@
 
 .header.fade-in .logo {
   animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+/* Add this to your header.css file */
+
+/* Hide header when modal is open */
+.header.modal-open {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Alternative: Lower header z-index when modal is open */
+.header.modal-backdrop {
+  z-index: 500;
+  transition: z-index 0s ease 0.3s;
+  /* Delay to allow modal to appear first */
+}
+
+/* Or ensure modal always appears above everything */
+.modal-overlay-one {
+  z-index: 9999 !important;
+  /* Higher than header */
+}
+
+.modal-container-one {
+  z-index: 10000 !important;
+  /* Even higher for the container */
 }

@@ -98,6 +98,30 @@ function Projects() {
     setSelectedProject(project);
     console.log("Selected project:", project);
     setIsOpen(true);
+    
+    // Hide header when modal opens
+    const header = document.querySelector('.header');
+    if (header) {
+      header.classList.add('modal-open');
+    }
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Handle closing modal
+  const handleCloseModal = () => {
+    setIsOpen(false);
+    setSelectedProject(null);
+    
+    // Show header when modal closes
+    const header = document.querySelector('.header');
+    if (header) {
+      header.classList.remove('modal-open');
+    }
+    
+    // Restore body scroll
+    document.body.style.overflow = 'unset';
   };
 
   // Fetch data when component mounts
@@ -114,6 +138,18 @@ function Projects() {
       }
     }
   }, [loading, projectDetails]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      // Ensure body scroll is restored on component unmount
+      document.body.style.overflow = 'unset';
+      const header = document.querySelector('.header');
+      if (header) {
+        header.classList.remove('modal-open');
+      }
+    };
+  }, []);
 
   // Loading state
   if (loading) {
@@ -182,19 +218,15 @@ function Projects() {
           <div className="project-text">
             {prt.title}
           </div>
-          {/* Uncomment if you want to show subtitle */}
-          {/* <div className="project-text2">
-            {prt.subtitle}
-          </div> */}
         </div>
       ))}
 
       {/* Modal for displaying reel */}
       {isOpen && selectedProject && (
-        <div className="modal-overlay-one" onClick={() => setIsOpen(false)}>
+        <div className="modal-overlay-one" onClick={handleCloseModal}>
           <div className="modal-container-one" onClick={(e) => e.stopPropagation()}>
             <div className="close-button-container-one">
-              <button className="close-button-one" onClick={() => setIsOpen(false)}>&times;</button>
+              <button className="close-button-one" onClick={handleCloseModal}>&times;</button>
             </div>
             <div className="video-wrapper">
               <ReelEmbed link={selectedProject.link} />
@@ -202,31 +234,6 @@ function Projects() {
           </div>
         </div>
       )}
-
-      {/* Debug information - Remove in production */}
-      {/* {process.env.NODE_ENV === 'development' && (
-        <div className="debug-info" style={{
-          position: 'fixed',
-          bottom: '10px',
-          right: '10px',
-          background: 'rgba(0,0,0,0.8)',
-          color: 'white',
-          padding: '10px',
-          borderRadius: '5px',
-          fontSize: '12px',
-          maxWidth: '300px'
-        }}>
-          <strong>Debug Info:</strong><br/>
-          Projects loaded: {projectDetails.length}<br/>
-          Images with URLs: {Object.keys(imageUrls).length}<br/>
-          <button 
-            onClick={() => console.log('Projects:', projectDetails, 'URLs:', imageUrls)}
-            style={{ marginTop: '5px', fontSize: '10px' }}
-          >
-            Log Data
-          </button>
-        </div>
-      )} */}
     </div>
   );
 }
