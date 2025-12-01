@@ -1,9 +1,8 @@
 .App {
   text-align: center;
 }
-/* *body{
-  background-color: #000;
-} */
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -22,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: min(calc(10px + 2vmin), 24px);
   color: white;
 }
 

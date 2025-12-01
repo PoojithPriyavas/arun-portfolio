@@ -12,7 +12,7 @@ export default function Tech() {
   const isInView = useInView(sectionRef, { once: true, threshold: 0.1 });
 
   const images = useMemo(() => Array.from({ length: 4 }, (_, index) =>
-    `/assets/logo3/${index + 1}.png`
+    `${process.env.PUBLIC_URL}/assets/logo3/${index + 1}.png`
   ), []);
   const [loaded, setLoaded] = useState(Array(images.length).fill(false));
 

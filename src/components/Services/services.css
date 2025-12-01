@@ -1,7 +1,5 @@
-/* Service Main Section */
 @media (max-width: 1400px) {
     .service-main {
-        /* padding: 100px 0; */
     }
 }
 
@@ -13,7 +11,6 @@
     z-index: 1;
 }
 
-/* Service Title Styles */
 .service-title {
     display: flex;
     flex-direction: column;
@@ -83,7 +80,6 @@
     }
 }
 
-/* Service Items */
 .service-items {
     border-left: 0;
     background: #101010;
@@ -179,7 +175,6 @@
     }
 }
 
-/* Service Background */
 .service-bg {
     left: 50%;
     opacity: .85;
@@ -210,7 +205,6 @@
     font-weight: 600;
 }
 
-/* Service Section */
 .srv-title {
     color: #e5540a;
     display: inline-block;
@@ -265,7 +259,6 @@
     padding-bottom: 10px;
 }
 
-/* Modal Styles */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -385,7 +378,6 @@
     text-overflow: ellipsis;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .modal-container {
         width: 95%;

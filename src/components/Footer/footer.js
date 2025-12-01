@@ -42,7 +42,7 @@ export default function Footer() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div className="column col-lg-6 col-md-6 col-sx-12 word" variants={fadeInVariant}>
-            <img src="/assets/about/user4.png" className="footer-logo" />
+            <img src={`${process.env.PUBLIC_URL}/assets/about/user4.png`} className="footer-logo" />
           </motion.div>
           <motion.div className="column col-lg-6 col-md-6 col-sx-12 icons" variants={fadeInVariant}>
             <i className="fa fa-facebook"></i>

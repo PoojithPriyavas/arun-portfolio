@@ -41,7 +41,7 @@ function Video() {
                         opacity: videoOpacity,
                     }}
                 >
-                    <source src="/assets/video/bg.mp4" type="video/mp4" />
+                    <source src={`${process.env.PUBLIC_URL}/assets/video/bg.mp4`} type="video/mp4" />
                 </motion.video>
                 
                 <motion.div 

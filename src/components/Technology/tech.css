@@ -25,27 +25,20 @@
 }
 
 .tech{
-    /* background:#000;
-    position: relative;
-    z-index: -1;
-    */
+  
     background:#000;
     border-top: 1px solid #202020;
   }
   
   @media (max-width: 1400px) {
     .tech-main {
-        /* padding: 40px 0; */
     }
   }
   .tech-main{
-    /* border-top: 1px solid #202020; */
     overflow: hidden;
-    /* position:relative;
-    background-color:#000 */
+  
   }
   .tech-title {
-    /* background: #090909; */
     color: #e5540a;
     display: inline-block;
     font-family: "Open Sans", sans-serif;

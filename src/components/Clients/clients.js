@@ -11,7 +11,7 @@ export default function Clients() {
   const sliderRef = useRef(null);
 
   const images = useMemo(() => Array.from({ length: 9 }, (_, index) =>
-    `/assets/logo2/${index + 1}.png`
+    `${process.env.PUBLIC_URL}/assets/logo2/${index + 1}.png`
   ), []);
   const [loaded, setLoaded] = useState(Array(images.length).fill(false));
 

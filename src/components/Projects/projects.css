@@ -87,7 +87,6 @@
   transform: translateX(0);
 }
 
-/* Modal styling */
 .modal-overlay-one {
   position: fixed;
   top: 0;
@@ -197,7 +196,6 @@
   transform: scale(1.1);
 }
 
-/* Skeleton Loader Styles */
 .skeleton-container {
   cursor: default;
   pointer-events: none;
@@ -245,7 +243,6 @@
   }
 }
 
-/* Error States */
 .error-state {
   display: flex;
   justify-content: center;
@@ -290,7 +287,6 @@
   background-color: #0056b3;
 }
 
-/* No Projects State */
 .no-projects {
   display: flex;
   justify-content: center;
@@ -309,7 +305,6 @@
   margin-bottom: 20px;
 }
 
-/* Image Loading States */
 .image-container img {
   transition: opacity 0.3s ease;
 }
@@ -319,7 +314,6 @@
   background-color: #1a1a1a;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .error-container {
     margin: 10px;

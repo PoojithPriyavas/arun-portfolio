@@ -7,17 +7,13 @@
 
 @media (max-width: 1400px) {
   .tstml-main {
-      /* padding: 40px 0; */
   }
 }
 .tstml-main{
-  /* border-top: 1px solid #202020; */
   overflow: hidden;
-  /* position:relative;
-  background-color:#000 */
+
 }
 .tstml-title {
-  /* background: #090909; */
   color: #e5540a;
   display: inline-block;
   font-family: "Open Sans", sans-serif;
@@ -92,24 +88,7 @@
 
 }
 
-/* .slider-main{
-  margin: 100px 200px;
-}
-.slide-div{
-  width: 100%;
-    display: inline-block;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-} */
 
-/* .testimonial-container {
-  width: 100%; 
-  margin: auto;
-} */
 .tsml {
  
   .container{
@@ -133,7 +112,6 @@
   width:100%;
 }
 .custom-slide {
-  /* width: 500px !important;  */
   margin: 0 auto;
   background-color: #181818;
   padding: 20px;

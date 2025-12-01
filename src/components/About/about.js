@@ -130,7 +130,7 @@ export default function About() {
             variants={slideInLeft}
           >
             <motion.img
-              src="/assets/about/profile.jpg"
+              src={`${process.env.PUBLIC_URL}/assets/about/profile.jpg`}
               className="abt-img"
               alt="about-img"
               style={{ maxWidth: "100%" }}

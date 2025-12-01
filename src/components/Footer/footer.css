@@ -2,8 +2,7 @@
   position: relative;
   width: 100%;
   background-color: #212121;
-  /* padding-top: 120px;
-  padding-bottom: 120px; */
+
   overflow: hidden;
   z-index: 1;
 }
@@ -36,7 +35,7 @@
 .copyright {
   color: #666;
   font-size: 14px;
-} */
+} 
 * {
   box-sizing: border-box;
 }
@@ -168,7 +167,6 @@
 
   .icons {
     display: flex;
-    /* justify-content: end; */
     gap:20px;
     padding-top:10px;
   }

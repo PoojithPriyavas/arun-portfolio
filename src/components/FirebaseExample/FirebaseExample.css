@@ -5,7 +5,6 @@
   font-family: 'Mulish', sans-serif;
 }
 
-/* Loading and Error States */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -101,7 +100,6 @@
   font-size: 0.9rem;
 }
 
-/* Projects Grid Styling */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -186,7 +184,6 @@
   font-style: italic;
 }
 
-/* Form Styling */
 .project-form {
   background-color: #f8f9fa;
   padding: 2rem;

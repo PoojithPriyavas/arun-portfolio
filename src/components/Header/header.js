@@ -26,7 +26,7 @@ const Header = () => {
     <div className="container">
       <header className={`header ${isVisible ? 'fade-in' : ''}`}>
         <div className="logo">
-          <img className="user-icon" src='/assets/about/user3.png'/>
+          <img className="user-icon" src={`${process.env.PUBLIC_URL}/assets/about/user3.png`}/>
           <p>Arun</p>
         </div>
         <nav className="nav-links">
