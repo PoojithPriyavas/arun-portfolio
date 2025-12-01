@@ -10,8 +10,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/image-url-example" element={<ImageUrlExample />} />
-          <Route path="/image-gallery" element={<FirebaseImageGallery />} />
+          {/* <Route path="/image-url-example" element={<ImageUrlExample />} />
+          <Route path="/image-gallery" element={<FirebaseImageGallery />} /> */}
         </Routes>
       </Router>
     </div>

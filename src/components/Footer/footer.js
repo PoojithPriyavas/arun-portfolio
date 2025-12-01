@@ -14,9 +14,9 @@ export default function Footer() {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
- const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
 
   const fadeInVariant = {
@@ -42,7 +42,7 @@ export default function Footer() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div className="column col-lg-6 col-md-6 col-sx-12 word" variants={fadeInVariant}>
-           <img src="/assets/about/user4.png" className="footer-logo"/>
+            <img src="/assets/about/user4.png" className="footer-logo" />
           </motion.div>
           <motion.div className="column col-lg-6 col-md-6 col-sx-12 icons" variants={fadeInVariant}>
             <i className="fa fa-facebook"></i>
@@ -64,11 +64,11 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <motion.div className="column col-lg-4 col-md-4 col-sx-12 content-one" variants={fadeInVariantThree}>
-          ©2025 Arun. All rights reserved.
+          <motion.div className="column col-lg-3 col-md-3 col-sx-12 content-one" variants={fadeInVariantThree}>
+            ©2025 Arun. All rights reserved.
           </motion.div>
           <motion.div
-            className="column col-lg-4 col-md-4 col-sx-12 up-arrow"
+            className="column col-lg-3 col-md-3 col-sx-12 up-arrow"
             variants={fadeInVariantThree}
           >
             {isVisible && (
@@ -81,8 +81,8 @@ export default function Footer() {
               ></motion.i>
             )}
           </motion.div>
-          <motion.div className="column col-lg-4 col-md-4 col-sx-12 content-two" variants={fadeInVariantThree}>
-            Designed By Cod Hatch
+          <motion.div className="column col-lg-6 col-md-6 col-sx-12 content-two" variants={fadeInVariantThree}>
+            Designed & Developed By &nbsp;<span style={{ fontWeight: 600 }}>KodHatch Technologies PVT LTD</span>
           </motion.div>
         </motion.div>
       </div>

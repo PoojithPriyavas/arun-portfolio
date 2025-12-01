@@ -93,6 +93,7 @@
     text-align: start;
     cursor: pointer;
     margin: 10px;
+    border-radius: 20px;
 }
 
 .service-items .fi {
@@ -152,6 +153,7 @@
 .service-items .read-more {
     background: rgba(90, 90, 90, .24);
     border: 0;
+    border-radius: 10px;
     display: inline-block;
     height: 45px;
     line-height: 0;

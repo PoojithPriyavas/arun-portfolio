@@ -55,7 +55,7 @@ function Projects() {
       console.log("Fetched projects:", projects);
       setProjectDetails(projects);
       setImageUrls(urls);
-      setLoaded(Array(projects.length).fill(true));
+      setLoaded(Array(projects.length).fill(false));
       setLoading(false);
 
     } catch (err) {
@@ -129,15 +129,7 @@ function Projects() {
     fetchProjects();
   }, []);
 
-  // Add fade-in effect after projects load
-  useEffect(() => {
-    if (!loading && projectDetails.length > 0) {
-      const imageGrid = document.getElementById('projects');
-      if (imageGrid) {
-        imageGrid.classList.add('fade-in');
-      }
-    }
-  }, [loading, projectDetails]);
+
 
   // Cleanup on unmount
   useEffect(() => {
@@ -151,14 +143,16 @@ function Projects() {
     };
   }, []);
 
-  // Loading state
+  // Loading state with skeleton grid
   if (loading) {
     return (
-      <div className="image-grid loading-state" id="projects">
-        <div className="loading-container">
-          <div className="loading-spinner"></div>
-          <p>Loading projects from Firebase...</p>
-        </div>
+      <div className="image-grid" id="projects">
+        {[...Array(6)].map((_, i) => (
+          <div key={`skeleton-${i}`} className="image-container skeleton-container">
+            <div className="skeleton-image"></div>
+            <div className="skeleton-text"></div>
+          </div>
+        ))}
       </div>
     );
   }
@@ -199,8 +193,9 @@ function Projects() {
           {/* Use Firebase Storage URL or fallback */}
           <img 
             src={imageUrls[prt.id] || '/assets/placeholder.png'} 
-            className="image" 
+            className={`image ${loaded[i] ? 'loaded' : ''}`}
             alt={prt.title}
+            style={{ objectFit: 'cover' }}
             onLoad={() => {
               // Update loaded state when image loads
               setLoaded(prev => {

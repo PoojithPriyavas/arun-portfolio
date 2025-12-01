@@ -297,7 +297,7 @@ export default function Services() {
                                     transition: { duration: 0.3, ease: "easeOut" }
                                 }}
                                 whileTap={{ scale: 0.98 }}
-                                onClick={() => handleOpenModal(item)}
+                                // onClick={() => handleOpenModal(item)}
                             >
                                 <motion.div 
                                     className="fi"

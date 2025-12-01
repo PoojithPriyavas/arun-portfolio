@@ -81,6 +81,7 @@
     max-width: 545px;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
+    border-radius: 20px;
 }
 
 /* 
