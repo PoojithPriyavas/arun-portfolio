@@ -162,7 +162,7 @@ export default function Testimonials() {
                     <h3 style={{ color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <span className="line"></span>
                       <img
-                        src="/assets/about/user.jpg"
+                        src={`${process.env.PUBLIC_URL}/assets/about/user.jpg`}
                         alt="User"
                         className="name-img"
                         style={{ width: '30px', height: '30px', marginRight: '10px', borderRadius: '50%' }}
