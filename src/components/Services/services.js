@@ -342,7 +342,7 @@ export default function Services() {
                                     transition={{ delay: 0.5 + index * 0.1, duration: 0.5, type: "spring" }}
                                 >
                                     <motion.img 
-                                        src="/assets/icons/arrow-down-right.svg" 
+                                        src={`${process.env.PUBLIC_URL}/assets/icons/arrow-down-right.svg`}
                                         alt="Read More"
                                         whileHover={{
                                             rotate: [0, 15, -15, 45],
