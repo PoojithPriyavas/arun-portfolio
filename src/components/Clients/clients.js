@@ -50,7 +50,7 @@ export default function Clients() {
       },
       {
         breakpoint: 480,
-        settings: { slidesToShow: 1, slidesToScroll: 1 }
+        settings: { slidesToShow: 2, slidesToScroll: 1 }
       }
     ],
     // afterChange: (current) => {

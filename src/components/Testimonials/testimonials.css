@@ -1,18 +1,19 @@
-.tstml{
-  background:#000;
+.tstml {
+  background: #000;
   position: relative;
   z-index: 1;
   border-top: 1px solid #202020;
 }
 
 @media (max-width: 1400px) {
-  .tstml-main {
-  }
+  .tstml-main {}
 }
-.tstml-main{
+
+.tstml-main {
   overflow: hidden;
 
 }
+
 .tstml-title {
   color: #e5540a;
   display: inline-block;
@@ -69,8 +70,8 @@
 
 @media (max-width: 1399px) {
   .tstml-bg h1 {
-      font-size: 190px;
-      line-height: 150px;
+    font-size: 190px;
+    line-height: 150px;
   }
 }
 
@@ -90,18 +91,19 @@
 
 
 .tsml {
- 
-  .container{
-  display: flex;
+
+  .container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     padding: 60px 0px;
     border-top: 1px solid #202020;
+  }
 }
-}
+
 .slide-wrapper {
-  padding: 0 10px; 
+  padding: 0 10px;
 }
 
 .slide-div {
@@ -109,29 +111,39 @@
   padding: 10px;
   border-radius: 8px;
   text-align: center;
-  width:100%;
+  width: 100%;
 }
+
 .custom-slide {
   margin: 0 auto;
   background-color: #181818;
   padding: 20px;
   border-radius: 20px;
 }
+
 .slick-slide {
   display: flex;
   justify-content: center;
 }
-.custom-slide-div{
-  padding:0px 25px;
-}
-.line {
-  display: block;
-  width: 40px;         
-  height: 2px;          
-  background-color: #919195; 
-  margin-right: 10px;   
+
+.custom-slide-div {
+  padding: 0px 25px;
 }
 
-.tstml-text{
-  margin-bottom:2rem;
+@media (max-width:768px) {
+  .custom-slide-div {
+    padding: 0px 4px;
+  }
+}
+
+.line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #919195;
+  margin-right: 10px;
+}
+
+.tstml-text {
+  margin-bottom: 2rem;
 }

@@ -285,7 +285,7 @@ export default function Services() {
             >
                 <Row className="srv-section-row">
                     {serviceDetails.map((item, index) => (
-                        <Col lg={4} md={6} sm={12} key={index} className="mb-4">
+                        <Col lg={4} md={6} sm={12} key={index} className="mb-4" style={{paddingLeft:'0px',paddingRight:'0px'}}>
                             <motion.div
                                 className="service-items"
                                 variants={serviceItemVariant}

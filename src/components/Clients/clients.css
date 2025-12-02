@@ -17,11 +17,31 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
-    padding:10px;
+    padding: 10px;
 }
 
 .custom-slider img {
     max-height: 100%;    
     width: auto;    
     display: block;
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+    .custom-slider {
+        height: 60px;
+        padding: 8px;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+    .custom-slider {
+        height: 50px;
+        padding: 5px;
+    }
+    
+    .client {
+        padding: 30px 20px;
+    }
 }
