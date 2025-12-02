@@ -8,20 +8,20 @@ function Video() {
         target: targetRef,
         offset: ["start start", "end start"]
     });
-    
+
     // Enhanced fade transitions with better scroll ranges
     const contentOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.3, 0]);
     const videoOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0.5, 0.2]);
-    
+
     // Scale effect for content as it fades
     const contentScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.95, 0.85]);
-    
+
     // Vertical movement for parallax effect
     const contentY = useTransform(scrollYProgress, [0, 1], [0, -150]);
-    
+
     // Blur effect as content fades
     const contentBlur = useTransform(scrollYProgress, [0, 0.5, 1], [0, 3, 10]);
-    
+
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         console.log("Scroll Progress:", latest);
     });
@@ -37,24 +37,24 @@ function Video() {
                     preload="auto"
                     className="bg-video"
                     // title="Background Video"
-                    style={{ 
+                    style={{
                         opacity: videoOpacity,
                     }}
                 >
                     <source src={`${process.env.PUBLIC_URL}/assets/video/bg.mp4`} type="video/mp4" />
                 </motion.video>
-                
-                <motion.div 
-                    className="content" 
-                    style={{ 
+
+                <motion.div
+                    className="content"
+                    style={{
                         opacity: contentOpacity,
                         scale: contentScale,
                         y: contentY,
                         filter: useTransform(contentBlur, (value) => `blur(${value}px)`)
                     }}
                 >
-                    <motion.h1 
-                        className="name font-mulish" 
+                    <motion.h1
+                        className="name font-mulish"
                         style={{ fontWeight: 800 }}
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -62,8 +62,8 @@ function Video() {
                     >
                         Hi, I'm Arun
                     </motion.h1>
-                    
-                    <motion.h4 
+
+                    <motion.h4
                         className="brand"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ function Video() {
                         Videographer • Editor • Visual Creator
                     </motion.h4>
                 </motion.div>
-                
+
                 {/* Optional: Scroll indicator */}
                 <motion.div
                     style={{
