@@ -18,7 +18,6 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-
   const fadeInVariant = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -42,7 +41,7 @@ export default function Footer() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div className="column col-lg-6 col-md-6 col-sx-12 word" variants={fadeInVariant}>
-            <img src={`${process.env.PUBLIC_URL}/assets/about/user4.png`} className="footer-logo" />
+            <img src={`${process.env.PUBLIC_URL}/assets/about/user4.png`} className="footer-logo" alt="Logo" />
           </motion.div>
           <motion.div className="column col-lg-6 col-md-6 col-sx-12 icons" variants={fadeInVariant}>
             <i className="fa fa-facebook"></i>
@@ -59,7 +58,7 @@ export default function Footer() {
           variants={fadeInVariantTwo}
         ></motion.div>
         <motion.div
-          className="row"
+          className="row bottom-row"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -82,7 +81,9 @@ export default function Footer() {
             )}
           </motion.div>
           <motion.div className="column col-lg-6 col-md-6 col-sx-12 content-two" variants={fadeInVariantThree}>
-            Designed & Developed By &nbsp;<span style={{ fontWeight: 600 }}>KodHatch Technologies PVT LTD</span>
+            <span className="designed-text">
+              Designed & Developed By <span className="company-name">KodHatch Technologies PVT LTD</span>
+            </span>
           </motion.div>
         </motion.div>
       </div>
