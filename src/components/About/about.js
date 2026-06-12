@@ -203,7 +203,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
             >
-              Welcome to Arun,
+              Welcome to Arun ,
             </motion.span>
             <br />
             <motion.span
